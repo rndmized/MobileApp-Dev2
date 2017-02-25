@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Arkanoid.Classes;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -26,18 +27,19 @@ namespace Arkanoid
     /// </summary>
     public sealed partial class GamePage : Page
     {
-
+        DispatcherTimer _timer;
         Accelerometer _acc;
         Rectangle[,] _rects;
+        Brick[,] _bricks;
 
         public GamePage()
         {
             this.InitializeComponent();
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.Landscape;
-            this.setupGameField(3,10);
+            this.setupGameField1(3,10);
         }
 
-        private void setupGameField(int rows, int columns)
+        private void setupGameField0(int rows, int columns)
         {
             //Canvas size width 600 height 300
             _rects = new Rectangle[rows, columns];
@@ -59,19 +61,49 @@ namespace Arkanoid
             }
         }
 
+        private void setupGameField1(int rows, int columns)
+        {
+            //Canvas size width 600 height 300
+
+            int height = (int)GameCanvas.Width / 20;
+            int width = (int)GameCanvas.Width / columns;
+            
+            _bricks = new Brick[rows, columns];
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    int x = (int)width * j;
+                    int y = (int)height * i;
+                    Brick brick = new Brick(x, y, width, height);
+
+                    Rectangle rect = new Rectangle();
+                    rect.Stroke = new SolidColorBrush(Colors.Black);
+                    rect.Fill = new SolidColorBrush(Colors.Magenta);
+                    rect.Height = height;
+                    rect.Width = width;
+                    rect.Tapped += Rect_Tapped;
+                    brick.setRectangle(rect);
+
+                    Canvas.SetLeft(brick.getBrick(), x);
+                    Canvas.SetTop(brick.getBrick(), y);
+                    _bricks[i, j] = brick;
+
+                    GameCanvas.Children.Add(_bricks[i,j].getBrick());
+                }
+            }
+        }
 
 
 
+        
         private void Rect_Tapped(object sender, TappedRoutedEventArgs e)
         {
             //Test Sample
             Rectangle rect = (Rectangle)sender;
-            Size rectSize = new Size(rect.Width, rect.Height);
-            Point loc = new Point();
-            Rect re = new Rect(loc, rectSize);
-            re.Intersect(re);
             GameCanvas.Children.Remove(rect);
 
         }
+        
     }
 }

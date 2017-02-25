@@ -1,0 +1,15 @@
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\ARM\Debug\Arkanoid.csprojResolveAssemblyReference.cache
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\ARM\Debug\App.g.i.cs
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\ARM\Debug\App.g.cs
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\ARM\Debug\GamePage.g.i.cs
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\ARM\Debug\GamePage.g.cs
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\ARM\Debug\MainPage.g.i.cs
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\ARM\Debug\MainPage.g.cs
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\ARM\Debug\XamlTypeInfo.g.cs
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\ARM\Debug\App.xaml
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\ARM\Debug\GamePage.xaml
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\ARM\Debug\MainPage.xaml
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\ARM\Debug\App.xbf
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\ARM\Debug\GamePage.xbf
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\ARM\Debug\MainPage.xbf
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\ARM\Debug\XamlSaveStateFile.xml

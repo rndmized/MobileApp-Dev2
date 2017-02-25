@@ -10,19 +10,19 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>7c8d409c-74c0-4b8a-b38a-065884218f10</PackageIdentityName>
     <PackageIdentityPublisher>CN=thefa</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\thefa\documents\visual studio 2015\Projects\Arkanoid\Arkanoid\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\thefa\documents\visual studio 2015\Projects\Arkanoid\Arkanoid\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\thefa\documents\visual studio 2015\Projects\Arkanoid\Arkanoid\bin\x86\Debug\Arkanoid.exe">
+    <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x86\Debug\Arkanoid.exe">
       <PackagePath>entrypoint\Arkanoid.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\thefa\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
@@ -334,56 +334,56 @@
     <AppxPackagedFile Include="C:\Users\thefa\.nuget\packages\System.Xml.XmlSerializer\4.0.10\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\thefa\documents\visual studio 2015\Projects\Arkanoid\Arkanoid\Assets\GameImages\Plat-Green.png">
+    <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\Assets\GameImages\Plat-Green.png">
       <PackagePath>Assets\GameImages\Plat-Green.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\thefa\documents\visual studio 2015\Projects\Arkanoid\Arkanoid\Assets\GameImages\Plat-Purple.png">
+    <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\Assets\GameImages\Plat-Purple.png">
       <PackagePath>Assets\GameImages\Plat-Purple.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\thefa\documents\visual studio 2015\Projects\Arkanoid\Arkanoid\Assets\GameImages\Plat-Red.png">
+    <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\Assets\GameImages\Plat-Red.png">
       <PackagePath>Assets\GameImages\Plat-Red.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\thefa\documents\visual studio 2015\Projects\Arkanoid\Arkanoid\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\thefa\documents\visual studio 2015\Projects\Arkanoid\Arkanoid\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\thefa\documents\visual studio 2015\Projects\Arkanoid\Arkanoid\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\thefa\documents\visual studio 2015\Projects\Arkanoid\Arkanoid\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\thefa\documents\visual studio 2015\Projects\Arkanoid\Arkanoid\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\thefa\documents\visual studio 2015\Projects\Arkanoid\Arkanoid\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\thefa\documents\visual studio 2015\Projects\Arkanoid\Arkanoid\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\thefa\documents\visual studio 2015\Projects\Arkanoid\Arkanoid\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\thefa\documents\visual studio 2015\Projects\Arkanoid\Arkanoid\bin\x86\Debug\Arkanoid.xr.xml">
+    <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x86\Debug\Arkanoid.xr.xml">
       <PackagePath>Arkanoid.xr.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\thefa\documents\visual studio 2015\Projects\Arkanoid\Arkanoid\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\thefa\documents\visual studio 2015\Projects\Arkanoid\Arkanoid\bin\x86\Debug\Core\Arkanoid.exe">
+    <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x86\Debug\Core\Arkanoid.exe">
       <PackagePath>Arkanoid.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
