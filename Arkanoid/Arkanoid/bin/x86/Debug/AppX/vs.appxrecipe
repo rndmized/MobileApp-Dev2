@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-02-25T17:40:46.726</Modified>
+      <Modified>2017-02-25T19:43:54.641</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x86\Debug\Arkanoid.exe">
       <PackagePath>entrypoint\Arkanoid.exe</PackagePath>
-      <Modified>2017-02-25T17:40:46.406</Modified>
+      <Modified>2017-02-25T19:43:54.303</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\thefa\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -500,7 +500,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x86\Debug\Arkanoid.xr.xml">
       <PackagePath>Arkanoid.xr.xml</PackagePath>
-      <Modified>2017-02-24T19:36:34.965</Modified>
+      <Modified>2017-02-25T19:01:34.524</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -509,11 +509,11 @@
     <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-02-25T17:31:24.285</Modified>
+      <Modified>2017-02-25T19:01:35.498</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x86\Debug\Core\Arkanoid.exe">
       <PackagePath>Arkanoid.exe</PackagePath>
-      <Modified>2017-02-25T17:40:46.721</Modified>
+      <Modified>2017-02-25T19:43:54.636</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

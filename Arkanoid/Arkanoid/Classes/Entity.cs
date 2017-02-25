@@ -29,7 +29,7 @@ namespace Arkanoid.Classes
             return (int)hitBox.X;
         }
 
-        public int getWith()
+        public int getWidth()
         {
             return (int)this.hitBox.Width;
         }
