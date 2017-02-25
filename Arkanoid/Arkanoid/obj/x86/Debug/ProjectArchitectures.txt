@@ -1,0 +1,1 @@
+C:\Users\thefa\documents\visual studio 2015\Projects\Arkanoid\Arkanoid\Arkanoid.csproj;x86
