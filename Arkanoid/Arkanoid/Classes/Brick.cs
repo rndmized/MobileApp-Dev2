@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Foundation;
+using Windows.UI;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Shapes;
 
 namespace Arkanoid.Classes
@@ -14,22 +16,35 @@ namespace Arkanoid.Classes
 
         private int thoughness;
         private bool isBroken = false;
-        private Rectangle rectangle;
+        private Rectangle brick;
         
 
         public Brick(int x, int y, int width, int height)
         {
             hitBox = new Rect(x, y, width, height);
+            setupBrick(width, height);
+            thoughness = 1;
 
         }
-        public void setRectangle(Rectangle rectangle)
+
+        private void setupBrick(int width, int height)
         {
-            this.rectangle = rectangle;
+            brick = new Rectangle();
+            brick.Stroke = new SolidColorBrush(Colors.Black);
+            brick.Fill = new SolidColorBrush(Colors.Magenta);
+            brick.Height = height;
+            brick.Width = width;
+            brick.SetValue(Rectangle.NameProperty, this.getX().ToString() + "_" + this.getY().ToString());
+        }
+
+        public void setBrick(Rectangle newBrick)
+        {
+            this.brick = newBrick;
         }
 
         public Rectangle getBrick()
         {
-            return rectangle;
+            return brick;
         }
 
         public bool isBrickBroken()
@@ -41,7 +56,7 @@ namespace Arkanoid.Classes
         {
             Rect check = hitBox;
             check.Intersect(rect);
-            return (isBroken) ? false : check.IsEmpty;
+            return (isBroken) ? false : !(check.IsEmpty);
         }
 
         public void Break()
@@ -53,6 +68,7 @@ namespace Arkanoid.Classes
                     isBroken = true;
                     break;
                 case 1:
+                    brick.Fill = new SolidColorBrush(Colors.Red);
                     break;
                 case 2:
                     break;

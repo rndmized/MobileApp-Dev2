@@ -22,13 +22,10 @@
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
       <RootProperty Name="Background" />
-      <RootProperty Name="Children" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Shapes.Ellipse">
-      <RootProperty Name="Height" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="Fill" />
-      <RootProperty Name="Stroke" />
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Inlines" />
     </RootType>
     <RootType FullName="Arkanoid.GamePage" />
     <RootType FullName="Windows.UI.Xaml.Controls.Button">

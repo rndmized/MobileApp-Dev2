@@ -31,10 +31,16 @@ namespace Arkanoid
     {
         DispatcherTimer _timer;
         Accelerometer _myAcc;
-        Rectangle[,] _rects;
         Brick[,] _bricks;
+        List<Brick> _bricks2;
+        Paddle paddle;
+        Ball ball;
 
-        Brick paddle; 
+        bool isStarted = false;
+        double xAxis = -5;
+        double yAxis = -5;
+
+        
 
         public GamePage()
         {
@@ -45,35 +51,15 @@ namespace Arkanoid
             this.Unloaded += MainPage_Unloaded;
         }
 
-        private void setupGameField0(int rows, int columns)
-        {
-            //Canvas size width 600 height 300
-            _rects = new Rectangle[rows, columns];
-            for (int i = 0; i < rows; i++)
-            {
-                for (int j = 0; j < columns; j++)
-                {
-                    Rectangle rect = new Rectangle();
-                    rect.Height = (GameCanvas.Width / 20);
-                    rect.Width = (GameCanvas.Width / columns);
-                    rect.Stroke = new SolidColorBrush(Colors.Black);
-                    rect.Fill = new SolidColorBrush(Colors.Magenta);
-                    rect.Tapped += Rect_Tapped;
-                    Canvas.SetLeft(rect, rect.Width * j);
-                    Canvas.SetTop(rect, rect.Height * i);
-                    _rects[i,j] = rect;
-                    GameCanvas.Children.Add(_rects[i, j]);
-                }
-            }
-        }
-
         private void setupGameField1(int rows, int columns)
         {
-            //Canvas size width 600 height 300
+            //Canvas size width 600 height 350
 
             int height = (int)GameCanvas.Width / 20;
             int width = (int)GameCanvas.Width / columns;
             
+            //Adding Bricks 1.0
+            /*
             _bricks = new Brick[rows, columns];
             for (int i = 0; i < rows; i++)
             {
@@ -82,15 +68,7 @@ namespace Arkanoid
                     int x = (int)width * j;
                     int y = (int)height * i;
                     Brick brick = new Brick(x, y, width, height);
-
-                    Rectangle rect = new Rectangle();
-                    rect.Stroke = new SolidColorBrush(Colors.Black);
-                    rect.Fill = new SolidColorBrush(Colors.Magenta);
-                    rect.Height = height;
-                    rect.Width = width;
-                    rect.Tapped += Rect_Tapped;
-                    brick.setRectangle(rect);
-
+                    brick.getBrick().Tapped += Rect_Tapped;
                     Canvas.SetLeft(brick.getBrick(), x);
                     Canvas.SetTop(brick.getBrick(), y);
                     _bricks[i, j] = brick;
@@ -98,35 +76,41 @@ namespace Arkanoid
                     GameCanvas.Children.Add(_bricks[i,j].getBrick());
                 }
             }
+            */
+            //Adding bricks 2.0
+            _bricks2 = new List<Brick>();
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    int x = (int)width * j;
+                    int y = (int)height * i;
+                    Brick brick = new Brick(x, y, width, height);
+                    brick.getBrick().Tapped += Rect_Tapped;
+                    Canvas.SetLeft(brick.getBrick(), x);
+                    Canvas.SetTop(brick.getBrick(), y);
+                    _bricks2.Add(brick);
+                }
+            }
+            foreach (Brick brick in _bricks2)
+            {
+                GameCanvas.Children.Add(brick.getBrick());
+            }
 
-            //Adding Paddle
-            paddle = new Brick((int)(GameCanvas.Width / 2) - 50, (int)(GameCanvas.Height) - 10, 100, 10);
+            //Adding Paddle 1.0
+            paddle = new Paddle((int)(GameCanvas.Width / 2) - 50, (int)(GameCanvas.Height) - 6, 100, 6);
             Rectangle paddleRect = new Rectangle();
-            paddleRect.Height = paddle.getHeight();
-            paddleRect.Width = paddle.getWidth();
-            paddleRect.Stroke = new SolidColorBrush(Colors.Black);
-            paddleRect.Fill = new SolidColorBrush(Colors.Black);
-            
-            paddle.setRectangle(paddleRect);
-            Canvas.SetLeft(paddle.getBrick(), paddle.getX());
-            Canvas.SetTop(paddle.getBrick(), paddle.getY());
-            GameCanvas.Children.Add(paddle.getBrick());
-            
-            //Adding Ball
-            Ellipse elBall = new Ellipse();
-            elBall.Height = 10;
-            elBall.Width = 10;
-            elBall.Stroke = new SolidColorBrush(Colors.Black);
-            elBall.Fill  = new SolidColorBrush(Colors.Yellow);
-            Canvas.SetLeft(elBall, paddle.getX()+(paddle.getWidth()/2));
-            Canvas.SetTop(elBall, paddle.getY()-10);
-            GameCanvas.Children.Add(elBall);
+            Canvas.SetLeft(paddle.getPaddle(), paddle.getX());
+            Canvas.SetTop(paddle.getPaddle(), paddle.getY());
+            GameCanvas.Children.Add(paddle.getPaddle());
 
+            //Adding Ball 1.0
+            ball = new Ball(paddle.getX() + (paddle.getWidth() / 2), paddle.getY() - 10, 10,10);
+            Canvas.SetLeft(ball.getBall(), ball.getX());
+            Canvas.SetTop(ball.getBall(), ball.getY());
+            GameCanvas.Children.Add(ball.getBall());
 
         }
-
-
-
         
         private void Rect_Tapped(object sender, TappedRoutedEventArgs e)
         {
@@ -142,12 +126,23 @@ namespace Arkanoid
         {
             if (args.VirtualKey == Windows.System.VirtualKey.Left)
             {
-                updateEllipsePosition("left");
+                updatePaddlePosition("left");
             }
             else if (args.VirtualKey == Windows.System.VirtualKey.Right)
             {
-                updateEllipsePosition("right");
+                updatePaddlePosition("right");
             }
+            else if (args.VirtualKey == Windows.System.VirtualKey.Space)
+            {
+                startGame();
+
+            }
+        }
+
+        private void startGame()
+        {
+            isStarted = true;
+            _timer.Start();
         }
 
         private void MainPage_Unloaded(object sender, RoutedEventArgs e)
@@ -166,12 +161,9 @@ namespace Arkanoid
             this.setupGameField1(3, 10);
             // check first if there is an accelerometer
             await checkForAccelerometer();
-
-            // centre the ellipse
-
-           // elMonday.SetValue(Canvas.LeftProperty, (cvsMonday.ActualWidth - elMonday.Width) / 2);
-        } // end loaded function
-
+            setupTimers();
+            
+        } 
 
         private async System.Threading.Tasks.Task checkForAccelerometer()
         {
@@ -213,7 +205,7 @@ namespace Arkanoid
             if (_timer == null)
             {
                 _timer = new DispatcherTimer();
-                _timer.Interval = new TimeSpan(0, 0, 0, 0, 100); // 100 ms
+                _timer.Interval = new TimeSpan(0, 0, 0, 0, 20); // 100 ms
                 _timer.Tick += _timer_Tick;
             }
         }
@@ -222,6 +214,8 @@ namespace Arkanoid
         {
             // move the block in a while, catch the key down event
             // create a key listener event
+            //updateEllipsePosition();
+            updateBallPosition();
 
         }
 
@@ -235,8 +229,7 @@ namespace Arkanoid
             await msgDialog.ShowAsync();
         }
 
-        private async void _myAcc_ReadingChanged(Accelerometer sender,
-            AccelerometerReadingChangedEventArgs args)
+        private async void _myAcc_ReadingChanged(Accelerometer sender, AccelerometerReadingChangedEventArgs args)
         {
             // update the UI with the reading.
             /*
@@ -252,70 +245,158 @@ namespace Arkanoid
                     // update the UI from here.
                     AccelerometerReading reading = args.Reading;
                     updateUI(reading);
+                    
                 }
             );
 
         }
 
+        private void updateBallPosition()
+        {
+
+            if (isStarted)
+            {
+                double xPos = ball.getX();
+                double yPos = ball.getY();
+
+                if (xPos > GameCanvas.Width - ball.getWidth())
+                {
+                    Canvas.SetLeft(ball.getBall(), GameCanvas.ActualWidth - ball.getWidth());
+                    xAxis = xAxis * -1;
+                }
+                if (xPos < 0)
+                {
+                    Canvas.SetLeft(ball.getBall(), 0);
+                    xAxis = xAxis * -1;
+                }
+                if (yPos > GameCanvas.Height - ball.getHeight())
+                {
+                    Canvas.SetTop(ball.getBall(), GameCanvas.ActualHeight - ball.getHeight());
+                    yAxis = yAxis * -1;
+                }
+                if (yPos < 0)
+                {
+                    Canvas.SetTop(ball.getBall(), 0);
+                    yAxis = yAxis * -1;
+                }
+                foreach (Brick brick in _bricks2)
+                {
+    
+                        if (brick.collides(ball.getHitBox()))
+                        {
+                            brick.Break();
+                            if (brick.isBrickBroken())
+                            {
+                                _bricks2.Remove(brick);
+                                //(Rectangle)GameCanvas.FindName(brick.getX().ToString() + "_" + brick.getY().ToString())
+                                GameCanvas.Children.Remove(brick.getBrick());
+                            }
+                        if (ball.getX() >= brick.getX() && ball.getX() <= brick.getX() + brick.getWidth() || (ball.getX() * ball.getHeight()) >= brick.getX() && (ball.getX() * ball.getHeight()) <= brick.getX() + brick.getWidth())
+                        {
+                             yAxis*= -1;
+                        }
+                        else if (ball.getY() >= brick.getY() && ball.getY() <= brick.getY() + brick.getHeight() || (ball.getY() * ball.getHeight()) >= brick.getY() && (ball.getY() * ball.getHeight()) <= brick.getY() + brick.getWidth())
+                        {
+                            xAxis *= -1;
+                        }
+                        break;
+                    }
+ 
+                }
+
+                tblStats.Text = "xPos: " + xPos.ToString() + "yPos: " + yPos.ToString() + "xAxis vector: " + xAxis.ToString() + "yAxis vector: " + yAxis.ToString();
+                xPos += xAxis;
+                yPos += yAxis;
+                ball.setX((int)xPos);
+                ball.setY((int)yPos);
+                Canvas.SetTop(ball.getBall(), ball.getY());
+                Canvas.SetLeft(ball.getBall(), ball.getX());
+
+            }
+        }
+
         private void updateUI(AccelerometerReading reading)
         {
           
-            updateEllipsePosition(reading);
+            updatePaddlePosition(reading);
         }
 
-        private void updateEllipsePosition(AccelerometerReading reading)
+        private void updatePaddlePosition(AccelerometerReading reading)
         {
 
             // use the AccelerationX: if >0 move right
             //                        if <0 move left
 
-            if (reading.AccelerationX < 0)
+            if (reading.AccelerationY < 0)
             {
-                if (!((double)paddle.getBrick().GetValue(Canvas.LeftProperty) <= 0))
+                if (!((double)paddle.getPaddle().GetValue(Canvas.LeftProperty) <= 0))
                 {
                     // move left
-                    paddle.getBrick().SetValue(Canvas.LeftProperty,
-                    (double)paddle.getBrick().GetValue(Canvas.LeftProperty) - increment);
+                    paddle.getPaddle().SetValue(Canvas.LeftProperty, (double)paddle.getPaddle().GetValue(Canvas.LeftProperty) - increment);
                 }
             }
             else
             {
-                if (!((double)paddle.getBrick().GetValue(Canvas.LeftProperty) >= (GameCanvas.ActualWidth - paddle.getBrick().Width)))
+                if (!((double)paddle.getPaddle().GetValue(Canvas.LeftProperty) >= (GameCanvas.ActualWidth - paddle.getPaddle().Width)))
                 {
                     // move right
-                    paddle.getBrick().SetValue(Canvas.LeftProperty,
-                    (double)paddle.getBrick().GetValue(Canvas.LeftProperty) + increment);
+                    paddle.getPaddle().SetValue(Canvas.LeftProperty, (double)paddle.getPaddle().GetValue(Canvas.LeftProperty) + increment);
                 }
             }
         }
 
-        double increment = 5;
+        int increment = 5;
 
-
-        private void updateEllipsePosition(string direction)
+        private void updatePaddlePosition(string direction)
         {
-            if (direction == "left")
+            if (isStarted)
             {
-                if (!((double)paddle.getBrick().GetValue(Canvas.LeftProperty) <= 0))
+                if (direction == "left")
                 {
-                    // move left
-                    paddle.getBrick().SetValue(Canvas.LeftProperty,
-                    (double)paddle.getBrick().GetValue(Canvas.LeftProperty) - increment);
+                    if (!((double)paddle.getPaddle().GetValue(Canvas.LeftProperty) <= 0))
+                    {
+                        // move left
+                        paddle.getPaddle().SetValue(Canvas.LeftProperty, (double)paddle.getPaddle().GetValue(Canvas.LeftProperty) - increment);
+                    }
                 }
-            }
-            else if (direction == "right")
+                else if (direction == "right")
+                {
+                    if (!((double)paddle.getPaddle().GetValue(Canvas.LeftProperty) >=
+                            (GameCanvas.ActualWidth - paddle.getPaddle().Width)
+                          )
+                       )
+                    {
+                        // move right
+                        paddle.getPaddle().SetValue(Canvas.LeftProperty, (double)paddle.getPaddle().GetValue(Canvas.LeftProperty) + increment);
+                    }
+                }
+
+            } else
             {
-                if (!((double)paddle.getBrick().GetValue(Canvas.LeftProperty) >=
-                        (GameCanvas.ActualWidth - paddle.getBrick().Width)
-                      )
-                   )
+                if (direction == "left")
                 {
-                    // move right
-                    paddle.getBrick().SetValue(Canvas.LeftProperty,
-                    (double)paddle.getBrick().GetValue(Canvas.LeftProperty) + increment);
+                    if (!((double)paddle.getPaddle().GetValue(Canvas.LeftProperty) <= 0))
+                    {
+                        // move left
+                        ball.setX(ball.getX()-increment);
+                        Canvas.SetLeft(ball.getBall(), ball.getX());
+                        paddle.getPaddle().SetValue(Canvas.LeftProperty, (double)paddle.getPaddle().GetValue(Canvas.LeftProperty) - increment);
+                    }
                 }
-            }
-            // add the up and down arrow keys to change the Canvas.Top
-        } // end update ellipse
+                else if (direction == "right")
+                {
+                    if (!((double)paddle.getPaddle().GetValue(Canvas.LeftProperty) >=
+                            (GameCanvas.ActualWidth - paddle.getPaddle().Width)
+                          )
+                       )
+                    {
+                        // move right
+                        ball.setX(ball.getX() + increment);
+                        Canvas.SetLeft(ball.getBall(), ball.getX());
+                       paddle.getPaddle().SetValue(Canvas.LeftProperty, (double)paddle.getPaddle().GetValue(Canvas.LeftProperty) + increment);
+                    }
+                }
+            }     
+        } 
     }
 }

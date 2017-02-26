@@ -9,9 +9,9 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel x:Name="spBackground" HorizontalAlignment="Center"  VerticalAlignment="Center" Orientation="Vertical">
-            <Canvas x:Name="GameCanvas" Height="348" Width="600" Background="ForestGreen">
-                <Ellipse x:Name="elMonday" Height="5" Width="5" Fill="Black" Stroke="Black"></Ellipse>
+            <Canvas x:Name="GameCanvas" Height="350" Width="600" Background="ForestGreen">
             </Canvas>
+            <TextBlock x:Name="tblStats" HorizontalAlignment="Center">Hello World</TextBlock>
         </StackPanel>
     </Grid>
 </Page>
