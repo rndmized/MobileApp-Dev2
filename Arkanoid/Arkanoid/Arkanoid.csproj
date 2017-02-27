@@ -99,6 +99,7 @@
     <Compile Include="Classes\Ball.cs" />
     <Compile Include="Classes\Brick.cs" />
     <Compile Include="Classes\Entity.cs" />
+    <Compile Include="Classes\LevelBuilder.cs" />
     <Compile Include="Classes\Paddle.cs" />
     <Compile Include="GamePage.xaml.cs">
       <DependentUpon>GamePage.xaml</DependentUpon>

@@ -30,8 +30,8 @@ namespace Arkanoid.Classes
         private void setupBrick(int width, int height)
         {
             brick = new Rectangle();
-            brick.Stroke = new SolidColorBrush(Colors.Black);
-            brick.Fill = new SolidColorBrush(Colors.Magenta);
+            brick.Stroke = new SolidColorBrush(Colors.Green);
+            brick.Fill = new SolidColorBrush(Colors.GreenYellow);
             brick.Height = height;
             brick.Width = width;
             brick.SetValue(Rectangle.NameProperty, this.getX().ToString() + "_" + this.getY().ToString());

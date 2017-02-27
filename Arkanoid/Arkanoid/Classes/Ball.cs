@@ -15,7 +15,7 @@ namespace Arkanoid.Classes
         Ellipse ball; 
         public Ball(int x, int y, int width, int height)
         {
-            hitBox = new Rect(x,y,1,1);
+            hitBox = new Rect(x,y,height,width);
             setupBall(height,width);
 
         }
@@ -26,7 +26,7 @@ namespace Arkanoid.Classes
             this.ball.Height = height;
             this.ball.Width = width;
             this.ball.Stroke = new SolidColorBrush(Colors.Black);
-            this.ball.Fill = new SolidColorBrush(Colors.Yellow);
+            this.ball.Fill = new SolidColorBrush(Colors.LimeGreen);
         }
 
         public Rect getHitBox()

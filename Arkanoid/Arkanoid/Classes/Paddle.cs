@@ -26,7 +26,7 @@ namespace Arkanoid.Classes
             paddle.Height = height;
             paddle.Width = width;
             paddle.Stroke = new SolidColorBrush(Colors.Black);
-            paddle.Fill = new SolidColorBrush(Colors.Black);
+            paddle.Fill = new SolidColorBrush(Colors.WhiteSmoke);
         }
 
         public Rectangle getPaddle()
@@ -37,6 +37,13 @@ namespace Arkanoid.Classes
         public void setPaddle(Rectangle newPaddle)
         {
             this.paddle = newPaddle;
+        }
+
+        public Boolean collides(Rect rect)
+        {
+            Rect check = hitBox;
+            check.Intersect(rect);
+            return false ? false : !(check.IsEmpty);
         }
 
     }
