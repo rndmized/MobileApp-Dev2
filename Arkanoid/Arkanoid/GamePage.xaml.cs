@@ -1,23 +1,17 @@
 ﻿using Arkanoid.Classes;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Devices.Sensors;
 using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.Graphics.Display;
 using Windows.UI;
 using Windows.UI.Core;
 using Windows.UI.Popups;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Shapes;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
@@ -34,12 +28,15 @@ namespace Arkanoid
         List<Brick> _bricks;
         Paddle paddle;
         Ball ball;
+        Canvas GameCanvas;
 
         bool isStarted = false;
+        bool winningCondition = false;
         int xAxis = -5;
         int yAxis = -5;
+        int increment = 10;
 
-        
+
 
         public GamePage()
         {
@@ -49,11 +46,12 @@ namespace Arkanoid
             this.Unloaded += MainPage_Unloaded;
         }
 
-
         #region Load/Unload
+
         private async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
             this.setupGameField(4, 10);
+            this.setupInfoGrid();
             // check first if there is an accelerometer
             await checkForAccelerometer();
             setupTimers();
@@ -67,17 +65,53 @@ namespace Arkanoid
             if (_myAcc != null)
             {
                 _myAcc.ReadingChanged -= _myAcc_ReadingChanged;
-                _myAcc.Shaken -= _myAcc_Shaken;
+                
+            }
+            if (_timer != null)
+            {
+                _timer.Tick -= _timer_Tick;
             }
         }
+
         #endregion
+
+        #region setup Environment
+
+
+        private void setupInfoGrid()
+        {
+            TextBlock tbxLives = new TextBlock();
+            tbxLives.Text = "Lives goes here.";
+            tbxLives.Foreground = new SolidColorBrush(Colors.Green);
+
+            TextBlock tbxScore = new TextBlock();
+            tbxScore.Text = "Score goes here.";
+            tbxScore.Foreground = new SolidColorBrush(Colors.Green);
+
+            grdInfo.ColumnDefinitions.Insert(0, new ColumnDefinition());
+            grdInfo.ColumnDefinitions.Insert(1, new ColumnDefinition());
+
+
+            tbxLives.SetValue(Grid.ColumnProperty, 0);
+            tbxLives.HorizontalAlignment = HorizontalAlignment.Left;
+
+            tbxScore.SetValue(Grid.ColumnProperty, 1);
+            tbxScore.HorizontalAlignment = HorizontalAlignment.Right;
+
+
+            grdInfo.Children.Add(tbxLives);
+            grdInfo.Children.Add(tbxScore);
+        }
 
         private void setupGameField(int rows, int columns)
         {
             //Canvas size width 600 height 350
-
-            int height = (int)GameCanvas.Height / 20;
-            int width = (int)GameCanvas.Width / columns;
+    
+            GameCanvas = new Canvas();
+            GameCanvas.Height = spCanvas.Height;
+            GameCanvas.Width = spCanvas.Width;
+            GameCanvas.Background = new SolidColorBrush(Colors.Black);
+            spCanvas.Children.Add(GameCanvas);
             
             //Adding bricks 3.0
             _bricks = new List<Brick>();
@@ -91,28 +125,51 @@ namespace Arkanoid
 
             //Adding Paddle 1.0
             paddle = new Paddle((int)(GameCanvas.Width / 2) - 50, (int)(GameCanvas.Height) - 6, 100, 6);
-            Rectangle paddleRect = new Rectangle();
             Canvas.SetLeft(paddle.getPaddle(), paddle.getX());
             Canvas.SetTop(paddle.getPaddle(), paddle.getY());
             GameCanvas.Children.Add(paddle.getPaddle());
 
             //Adding Ball 1.0
             ball = new Ball(paddle.getX() + (paddle.getWidth() / 2), paddle.getY() - 11, 10, 10);
+            ball.getBall().Tapped += GamePage_Tapped;
             Canvas.SetLeft(ball.getBall(), ball.getX());
             Canvas.SetTop(ball.getBall(), ball.getY());
             GameCanvas.Children.Add(ball.getBall());
 
         }
-        
-        private void Rect_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            //Test Sample
-            Rectangle rect = (Rectangle)sender;
-            GameCanvas.Children.Remove(rect);
 
+        private void GamePage_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            startGame();
         }
 
+        #endregion
+
+        #region Sensor/ Controls setup
+
         private uint _desiredReportInterval;
+
+        private async void _myAcc_ReadingChanged(Accelerometer sender, AccelerometerReadingChangedEventArgs args)
+        {
+            // update the UI with the reading.
+            /*
+             * The () => {} construct is called a lambda expression
+             * This is an anonymous function that can be used to create delegate methods
+             * of passed as arguments or returned as the value of a function call.
+             * In this case, the Accelerometer thread is asking the UI thread 
+             * to update some display information from the readings.
+             */
+            await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal,
+                () =>
+                {
+                    // update the UI from here.
+                    AccelerometerReading reading = args.Reading;
+                    updateUI(reading);
+
+                }
+            );
+
+        }
 
         private void CoreWindow_KeyDown(CoreWindow sender, KeyEventArgs args)
         {
@@ -130,16 +187,6 @@ namespace Arkanoid
 
             }
         }
-
-        private void startGame()
-        {
-            isStarted = true;
-            _timer.Start();
-        }
-
-
-
-        
 
         private async System.Threading.Tasks.Task checkForAccelerometer()
         {
@@ -160,7 +207,7 @@ namespace Arkanoid
                 // create the event handlers for readings
                 // changed and the shaken event.
                 _myAcc.ReadingChanged += _myAcc_ReadingChanged;
-                _myAcc.Shaken += _myAcc_Shaken;
+
                 // set the report intervals in milliseconds
                 uint minReportInterval = _myAcc.MinimumReportInterval;
                 /*
@@ -174,14 +221,16 @@ namespace Arkanoid
                 _myAcc.ReportInterval = _desiredReportInterval;
             }
         }
-
+        
+        #endregion
+        
         #region Timers Information
         private void setupTimers()
         {
             if (_timer == null)
             {
                 _timer = new DispatcherTimer();
-                _timer.Interval = new TimeSpan(100); // 100 ms
+                _timer.Interval = new TimeSpan(1000); // 100 ms
                 _timer.Tick += _timer_Tick;
             }
         }
@@ -195,47 +244,121 @@ namespace Arkanoid
             {
                 updateBallPosition();
             }
-            
-
+            else if (!isStarted && winningCondition)
+            {
+                stageOver();
+            }
         }
-
 
         #endregion
 
-        private async void _myAcc_Shaken(Accelerometer sender, AccelerometerShakenEventArgs args)
+        private void startGame()
         {
-            // tell the user not to shake the phone;
-            MessageDialog msgDialog = new MessageDialog("that's not a good idea");
-            await msgDialog.ShowAsync();
+            isStarted = true;
+            _timer.Start();
         }
 
-        private async void _myAcc_ReadingChanged(Accelerometer sender, AccelerometerReadingChangedEventArgs args)
+        #region Game over
+        private void gameOver()
         {
-            // update the UI with the reading.
-            /*
-             * The () => {} construct is called a lambda expression
-             * This is an anonymous function that can be used to create delegate methods
-             * of passed as arguments or returned as the value of a function call.
-             * In this case, the Accelerometer thread is asking the UI thread 
-             * to update some display information from the readings.
-             */
-            await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal,
-                () =>
-                {
-                    // update the UI from here.
-                    AccelerometerReading reading = args.Reading;
-                    updateUI(reading);
-                    
-                }
-            );
+
+            isStarted = false;
+            GameCanvas.Children.Remove(ball.getBall());
+            TextBlock tblGameOver = new TextBlock();
+            tblGameOver.Text = "GAME OVER";
+            tblGameOver.FontSize = 35;
+            tblGameOver.Foreground = new SolidColorBrush(Colors.LimeGreen);
+            Canvas.SetLeft(tblGameOver, (GameCanvas.Width / 2) - 100);
+            Canvas.SetTop(tblGameOver, GameCanvas.Height / 2);
+            GameCanvas.Children.Add(tblGameOver);
+            _timer.Stop();
+            //Back to menu button
+            Button btnMenu = new Button();
+            btnMenu.Tapped += BtnMenu_Tapped;
+            btnMenu.Content = "Main Menu";
+            btnMenu.Foreground = new SolidColorBrush(Colors.Green);
+            btnMenu.BorderBrush = new SolidColorBrush(Colors.Green);
+            btnMenu.BorderThickness = new Thickness(2);
+            Canvas.SetLeft(btnMenu, (GameCanvas.Width / 2) - 75);
+            Canvas.SetTop(btnMenu, (GameCanvas.Height / 2) + 60);
+            GameCanvas.Children.Add(btnMenu);
+            //Retry button
+            Button btnRetry = new Button();
+            btnRetry.Tapped += btnRetry_Tapped;
+            btnRetry.Content = "Retry";
+            btnRetry.Foreground = new SolidColorBrush(Colors.Green);
+            btnRetry.BorderBrush = new SolidColorBrush(Colors.Green);
+            btnRetry.BorderThickness = new Thickness(2);
+            Canvas.SetLeft(btnRetry, (GameCanvas.Width / 2)+25);
+            Canvas.SetTop(btnRetry, (GameCanvas.Height / 2) + 60);
+            GameCanvas.Children.Add(btnRetry);
 
         }
+
+        private void btnRetry_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            //Clear Score
+            GameCanvas.Children.Clear();
+            this.setupGameField(4, 10);
+        }
+
+        private void BtnMenu_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage));
+        }
+        #endregion
+
+        #region StageOver
+        private void stageOver()
+        {
+            _timer.Stop();
+            winningCondition = false;
+            GameCanvas.Children.Remove(ball.getBall());
+            TextBlock tblstageOver = new TextBlock();
+            tblstageOver.Text = "STAGE CLEARED";
+            tblstageOver.FontSize = 35;
+            tblstageOver.Foreground = new SolidColorBrush(Colors.LimeGreen);
+            Button btnStageOver = new Button();
+            btnStageOver.Content = "Next Stage";
+            btnStageOver.Foreground = new SolidColorBrush(Colors.LimeGreen);
+            btnStageOver.Background = new SolidColorBrush(Colors.Black);
+            btnStageOver.BorderBrush = new SolidColorBrush(Colors.LimeGreen);
+            btnStageOver.BorderThickness = new Thickness(1);
+            btnStageOver.Tapped += BtnStageOver_Tapped;
+
+            Canvas.SetLeft(tblstageOver, (GameCanvas.Width / 2) - 100);
+            Canvas.SetTop(tblstageOver, GameCanvas.Height / 2);
+            Canvas.SetLeft(btnStageOver, (GameCanvas.Width / 2) - 100);
+            Canvas.SetTop(btnStageOver, (GameCanvas.Height / 2) - 40);
+            GameCanvas.Children.Add(tblstageOver);
+            GameCanvas.Children.Add(btnStageOver);
+
+        }
+
+        private void BtnStageOver_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            GameCanvas.Children.Clear();
+            this.setupGameField(4,10);
+        }
+        #endregion
+
+        #region GUI Updates
 
         private void updateBallPosition()
         {
 
             if (isStarted)
             {
+                if (_bricks.Count <= 0)
+                {
+                    winningCondition = true;
+                    isStarted = false;
+
+                }
+                else
+                {
+
+                
                 int xPos = ball.getX();
                 int yPos = ball.getY();
 
@@ -286,12 +409,10 @@ namespace Arkanoid
                     }
                 }
 
-                if (ball.getY() > 300)
+                if (ball.getY() > 200)
                 {
-                    tblStats.Text = "Paddle Collision? " + paddle.collides(ball.getHitBox());
                     if (paddle.collides(ball.getHitBox()))
                     {
-                        tblStats.Text = "Paddle Collision!";
                         ball.setY(paddle.getY() - 11);
                         yAxis *= -1;
 
@@ -304,31 +425,12 @@ namespace Arkanoid
                 ball.setY(yPos);
                 Canvas.SetTop(ball.getBall(), ball.getY());
                 Canvas.SetLeft(ball.getBall(), ball.getX());
-
+                }
             }
         }
 
-        private void gameOver()
-        {
-
-            isStarted = false;
-            GameCanvas.Children.Remove(ball.getBall());
-            TextBlock tblGameOver = new TextBlock();
-            tblGameOver.Text = "GAME OVER";
-            tblGameOver.FontSize = 35;
-            tblGameOver.Foreground = new SolidColorBrush(Colors.LimeGreen);
-            tblGameOver.FontFamily = FontFamily.XamlAutoFontFamily;
-            Canvas.SetLeft(tblGameOver, (GameCanvas.Width/2) - 100);
-            Canvas.SetTop(tblGameOver, GameCanvas.Height / 2);
-            GameCanvas.Children.Add(tblGameOver);
-            _timer.Stop();
-            //this.Frame.Navigate(typeof (Arkanoid.GamePage));
-
-        }
-
         private void updateUI(AccelerometerReading reading)
-        {
-          
+        { 
             updatePaddlePosition(reading);
         }
 
@@ -340,7 +442,7 @@ namespace Arkanoid
 
             if (isStarted)
             {
-                if (reading.AccelerationY > 0.1)
+                if (reading.AccelerationY > 0.04)
                 {
                     if (!((double)paddle.getPaddle().GetValue(Canvas.LeftProperty) <= 0))
                     {
@@ -349,7 +451,7 @@ namespace Arkanoid
                         Canvas.SetLeft(paddle.getPaddle(), paddle.getX());
                     }
                 }
-                else if (reading.AccelerationY < -0.1)
+                else if (reading.AccelerationY < -0.04)
                 {
                     if (!((double)paddle.getPaddle().GetValue(Canvas.LeftProperty) >= (GameCanvas.ActualWidth - paddle.getPaddle().Width)))
                     {
@@ -387,8 +489,6 @@ namespace Arkanoid
             }
 
     }
-
-        int increment = 5;
 
         private void updatePaddlePosition(string direction)
         {
@@ -438,6 +538,9 @@ namespace Arkanoid
                     }
                 }
             }     
-        } 
+        }
+        
+        #endregion
+
     }
 }

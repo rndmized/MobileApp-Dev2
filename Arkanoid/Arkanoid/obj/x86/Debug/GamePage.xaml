@@ -7,17 +7,17 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="Black">
-        
-            <StackPanel x:ConnectionId='2' x:Name="spBackground" HorizontalAlignment="Center"  VerticalAlignment="Center" Orientation="Vertical" >
-                <Border CornerRadius="5" BorderBrush="Green" BorderThickness="2">
-                    <Canvas x:ConnectionId='4' x:Name="GameCanvas" Height="350" Width="600" Background="Black">
-                    </Canvas>
-                </Border>
-                <TextBlock x:ConnectionId='3' x:Name="tblStats" HorizontalAlignment="Center">Hello World</TextBlock>
-            </StackPanel>
-        
-        
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel x:ConnectionId='2' x:Name="spBackground" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Vertical" Background="Black">
+            <Grid x:ConnectionId='3' x:Name="grdInfo"></Grid>
+            <Border BorderBrush="Green" BorderThickness="2">
+                <Viewbox Stretch="UniformToFill">
+                    <StackPanel x:ConnectionId='5' x:Name="spCanvas" Height="400" Width="800">
+                    </StackPanel>
+                </Viewbox>
+            </Border>
+            <TextBlock x:ConnectionId='4' x:Name="tblStats" HorizontalAlignment="Center">Hello World</TextBlock>
+        </StackPanel>
     </Grid>
 </Page>
 
