@@ -16,6 +16,9 @@ namespace Arkanoid.Classes
 
         public SpeedBrick(int x, int y, int width, int height) : base(x, y, width, height)
         {
+            hitBox = new Rect(x, y, width, height);
+            setupBrick(width, height);
+            thoughness = 1;
         }
 
         private void setupBrick(int width, int height)
@@ -26,6 +29,13 @@ namespace Arkanoid.Classes
             brick.Height = height;
             brick.Width = width;
             brick.SetValue(Rectangle.NameProperty, this.getX().ToString() + "_" + this.getY().ToString());
+        }
+
+        public new Ball impactEffect(Ball ball)
+        {
+            ball.setXVector((float)(ball.getXVector() * 2));
+            ball.setYVector((float)(ball.getYVector() * 2));
+            return ball;
         }
 
     }

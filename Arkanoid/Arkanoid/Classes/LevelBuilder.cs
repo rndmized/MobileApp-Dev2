@@ -47,7 +47,7 @@ namespace Arkanoid.Classes
                 {
                     int x = (int)width * j;
                     int y = (int)height * i;
-                    Brick brick = new Brick(x, y, width, height);
+                    Brick brick = getRandomBrick(x, y, width, height);
                     Canvas.SetLeft(brick.getBrick(), x);
                     Canvas.SetTop(brick.getBrick(), y);
                     levelLayout.Add(brick);
@@ -59,6 +59,23 @@ namespace Arkanoid.Classes
                 levelLayout.RemoveAt(rnd.Next(0,levelLayout.Count));
             }
             return levelLayout;
+        }
+
+        private Brick getRandomBrick(int x, int y, int width, int height)
+        {
+            Random rnd = new Random(x*y*width*height);
+            Brick randomBrick;
+            int randomNum = rnd.Next(0, 3);
+            switch (randomNum)
+            {
+                case 0:
+                    randomBrick = new SpeedBrick(x, y, width, height);
+                    break;
+                default:
+                    randomBrick = new Brick(x, y, width, height);
+                    break;
+            }
+            return randomBrick;
         }
     }
 }

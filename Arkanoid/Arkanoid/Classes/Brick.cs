@@ -75,7 +75,8 @@ namespace Arkanoid.Classes
 
         }
 
-        public void impactEffect(Canvas GameCanvas) {
+        public Ball impactEffect(Ball ball) {
+            return ball;
             //DO nothing for regular bricks.
         }
             

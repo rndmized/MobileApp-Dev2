@@ -32,8 +32,6 @@ namespace Arkanoid
 
         bool isStarted = false;
         bool winningCondition = false;
-        //int xAxis = -5;
-        //int yAxis = -5;
         int increment = 10;
 
 
@@ -353,6 +351,7 @@ namespace Arkanoid
 
             if (isStarted)
             {
+                tblStats.Text = "X vec: "+ball.getXVector().ToString() +"yVec: " + ball.getYVector().ToString();
                 if (_bricks.Count <= 0)
                 {
                     winningCondition = true;
@@ -370,25 +369,20 @@ namespace Arkanoid
                 {
                     Canvas.SetLeft(ball.getBall(), GameCanvas.ActualWidth - ball.getWidth());
                         ball.setXVector(ball.getXVector()*-1);
-                   // xAxis = xAxis * -1;
                 }
                 if (xPos < 0)
                 {
                     Canvas.SetLeft(ball.getBall(), 0);
                         ball.setXVector(ball.getXVector() * -1);
-                        //xAxis = xAxis * -1;
                 }
                 if (yPos > GameCanvas.Height - ball.getHeight())
                 {
                     gameOver();
-                    //Canvas.SetTop(ball.getBall(), GameCanvas.ActualHeight - ball.getHeight());
-                    //yAxis = yAxis * -1;
                 }
                 if (yPos < 0)
                 {
                     Canvas.SetTop(ball.getBall(), 0);
                         ball.setYVector(ball.getYVector() * -1);
-                        //yAxis = yAxis * -1;
                 }
                 if (ball.getY() < 150)
                 {
@@ -398,6 +392,7 @@ namespace Arkanoid
                         if (brick.collides(ball.getHitBox()))
                         {
                             brick.Break();
+                            ball = brick.impactEffect(ball);
                             if (brick.isBrickBroken())
                             {
                                 _bricks.Remove(brick);
@@ -406,12 +401,10 @@ namespace Arkanoid
                             if (ball.getX() >= brick.getX() && ball.getX() <= brick.getX() + brick.getWidth() || (ball.getX() * ball.getHeight()) >= brick.getX() && (ball.getX() * ball.getHeight()) <= brick.getX() + brick.getWidth())
                             {
                                     ball.setYVector(ball.getYVector() * -1);
-                                    //yAxis *= -1;
                             }
                             else if (ball.getY() >= brick.getY() && ball.getY() <= brick.getY() + brick.getHeight() || (ball.getY() * ball.getHeight()) >= brick.getY() && (ball.getY() * ball.getHeight()) <= brick.getY() + brick.getWidth())
                             {
                                     ball.setXVector(ball.getXVector() * -1);
-                                    //xAxis *= -1;
                             }
                             break;
                         }
@@ -424,15 +417,12 @@ namespace Arkanoid
                     {
                         ball.setY(paddle.getY() - 11);
                             ball.setYVector(ball.getYVector() * -1);
-                            //yAxis *= -1;
-
                     }
                 }
 
-                //xPos += xAxis;
-                //yPos += yAxis;
-                    xPos += ball.getXVector();
-                    yPos += ball.getYVector();
+
+                xPos += ball.getXVector();
+                yPos += ball.getYVector();
                 ball.setX((int)xPos);
                 ball.setY((int)yPos);
                 Canvas.SetTop(ball.getBall(), ball.getY());
@@ -551,7 +541,16 @@ namespace Arkanoid
                 }
             }     
         }
-        
+
+        #endregion
+
+        #region Game Mechanics
+        private void impactEffect(Brick brick)
+        {
+            if (brick.GetType()== typeof(Brick)) {
+            }
+
+        }
         #endregion
 
     }
