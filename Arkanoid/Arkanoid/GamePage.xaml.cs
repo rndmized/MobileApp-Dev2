@@ -32,8 +32,8 @@ namespace Arkanoid
 
         bool isStarted = false;
         bool winningCondition = false;
-        int xAxis = -5;
-        int yAxis = -5;
+        //int xAxis = -5;
+        //int yAxis = -5;
         int increment = 10;
 
 
@@ -254,6 +254,10 @@ namespace Arkanoid
 
         private void startGame()
         {
+            if (ball.getX() > GameCanvas.Width/2)
+            {
+                ball.setXVector(ball.getXVector() * -1);
+            }
             isStarted = true;
             _timer.Start();
         }
@@ -299,7 +303,7 @@ namespace Arkanoid
         {
             //Clear Score
             GameCanvas.Children.Clear();
-            this.setupGameField(4, 10);
+            this.Frame.Navigate(typeof(GamePage));
         }
 
         private void BtnMenu_Tapped(object sender, TappedRoutedEventArgs e)
@@ -359,18 +363,20 @@ namespace Arkanoid
                 {
 
                 
-                int xPos = ball.getX();
-                int yPos = ball.getY();
+                float xPos = ball.getX();
+                float yPos = ball.getY();
 
                 if (xPos > GameCanvas.Width - ball.getWidth())
                 {
                     Canvas.SetLeft(ball.getBall(), GameCanvas.ActualWidth - ball.getWidth());
-                    xAxis = xAxis * -1;
+                        ball.setXVector(ball.getXVector()*-1);
+                   // xAxis = xAxis * -1;
                 }
                 if (xPos < 0)
                 {
                     Canvas.SetLeft(ball.getBall(), 0);
-                    xAxis = xAxis * -1;
+                        ball.setXVector(ball.getXVector() * -1);
+                        //xAxis = xAxis * -1;
                 }
                 if (yPos > GameCanvas.Height - ball.getHeight())
                 {
@@ -381,7 +387,8 @@ namespace Arkanoid
                 if (yPos < 0)
                 {
                     Canvas.SetTop(ball.getBall(), 0);
-                    yAxis = yAxis * -1;
+                        ball.setYVector(ball.getYVector() * -1);
+                        //yAxis = yAxis * -1;
                 }
                 if (ball.getY() < 150)
                 {
@@ -398,11 +405,13 @@ namespace Arkanoid
                             }
                             if (ball.getX() >= brick.getX() && ball.getX() <= brick.getX() + brick.getWidth() || (ball.getX() * ball.getHeight()) >= brick.getX() && (ball.getX() * ball.getHeight()) <= brick.getX() + brick.getWidth())
                             {
-                                yAxis *= -1;
+                                    ball.setYVector(ball.getYVector() * -1);
+                                    //yAxis *= -1;
                             }
                             else if (ball.getY() >= brick.getY() && ball.getY() <= brick.getY() + brick.getHeight() || (ball.getY() * ball.getHeight()) >= brick.getY() && (ball.getY() * ball.getHeight()) <= brick.getY() + brick.getWidth())
                             {
-                                xAxis *= -1;
+                                    ball.setXVector(ball.getXVector() * -1);
+                                    //xAxis *= -1;
                             }
                             break;
                         }
@@ -414,15 +423,18 @@ namespace Arkanoid
                     if (paddle.collides(ball.getHitBox()))
                     {
                         ball.setY(paddle.getY() - 11);
-                        yAxis *= -1;
+                            ball.setYVector(ball.getYVector() * -1);
+                            //yAxis *= -1;
 
                     }
                 }
 
-                xPos += xAxis;
-                yPos += yAxis;
-                ball.setX(xPos);
-                ball.setY(yPos);
+                //xPos += xAxis;
+                //yPos += yAxis;
+                    xPos += ball.getXVector();
+                    yPos += ball.getYVector();
+                ball.setX((int)xPos);
+                ball.setY((int)yPos);
                 Canvas.SetTop(ball.getBall(), ball.getY());
                 Canvas.SetLeft(ball.getBall(), ball.getX());
                 }

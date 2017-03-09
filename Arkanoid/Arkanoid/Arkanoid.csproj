@@ -97,6 +97,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Classes\Ball.cs" />
+    <Compile Include="Classes\SpeedBrick.cs" />
     <Compile Include="Classes\Brick.cs" />
     <Compile Include="Classes\Entity.cs" />
     <Compile Include="Classes\LevelBuilder.cs" />

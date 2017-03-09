@@ -12,7 +12,10 @@ namespace Arkanoid.Classes
 {
     class Ball : Entity
     {
-        Ellipse ball; 
+        private Ellipse ball;
+        private float yVector = -5;
+        private float xVector = -5;
+
         public Ball(int x, int y, int width, int height)
         {
             hitBox = new Rect(x,y,height,width);
@@ -43,5 +46,13 @@ namespace Arkanoid.Classes
         {
             this.ball = ellipse;
         }
+
+        public float getXVector() { return xVector; }
+        public void setXVector(float newVec) { xVector = newVec; }
+
+        public float getYVector() { return yVector; }
+        public void setYVector(float newVec) { yVector = newVec; }
+
+
     }
 }

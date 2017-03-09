@@ -14,9 +14,9 @@ namespace Arkanoid.Classes
     class Brick : Entity
     {
 
-        private int thoughness;
-        private bool isBroken = false;
-        private Rectangle brick;
+        protected int thoughness;
+        protected bool isBroken = false;
+        protected Rectangle brick;
         
 
         public Brick(int x, int y, int width, int height)
@@ -68,12 +68,16 @@ namespace Arkanoid.Classes
                     isBroken = true;
                     break;
                 case 1:
-                    brick.Fill = new SolidColorBrush(Colors.Red);
                     break;
                 case 2:
                     break;
             }
 
         }
+
+        public void impactEffect(Canvas GameCanvas) {
+            //DO nothing for regular bricks.
+        }
+            
     }
 }

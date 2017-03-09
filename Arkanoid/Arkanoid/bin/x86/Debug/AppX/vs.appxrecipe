@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-02T12:50:29.713</Modified>
+      <Modified>2017-03-09T11:57:16.510</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x86\Debug\Arkanoid.exe">
       <PackagePath>entrypoint\Arkanoid.exe</PackagePath>
-      <Modified>2017-03-02T12:50:29.309</Modified>
+      <Modified>2017-03-09T11:57:14.020</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\thefa\.nuget\packages\Microsoft.CSharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -569,11 +569,11 @@
     <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-02T12:43:29.323</Modified>
+      <Modified>2017-03-09T11:57:15.893</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x86\Debug\Core\Arkanoid.exe">
       <PackagePath>Arkanoid.exe</PackagePath>
-      <Modified>2017-03-02T12:50:29.708</Modified>
+      <Modified>2017-03-09T11:57:16.494</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
