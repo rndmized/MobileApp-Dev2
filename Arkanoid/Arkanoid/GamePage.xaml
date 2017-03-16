@@ -16,7 +16,6 @@
                     </StackPanel>
                 </Viewbox>
             </Border>
-            <TextBlock x:Name="tblStats" HorizontalAlignment="Center">Hello World</TextBlock>
         </StackPanel>
     </Grid>
 </Page>

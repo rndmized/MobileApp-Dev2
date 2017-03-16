@@ -97,13 +97,14 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Classes\Ball.cs" />
-    <Compile Include="Classes\HardBrick.cs" />
-    <Compile Include="Classes\SlowBrick.cs" />
-    <Compile Include="Classes\SpeedBrick.cs" />
-    <Compile Include="Classes\Brick.cs" />
+    <Compile Include="Classes\Brick\HardBrick.cs" />
+    <Compile Include="Classes\Brick\SlowBrick.cs" />
+    <Compile Include="Classes\Brick\SpeedBrick.cs" />
+    <Compile Include="Classes\Brick\Brick.cs" />
     <Compile Include="Classes\Entity.cs" />
     <Compile Include="Classes\LevelBuilder.cs" />
     <Compile Include="Classes\Paddle.cs" />
+    <Compile Include="Classes\ScoreController.cs" />
     <Compile Include="GamePage.xaml.cs">
       <DependentUpon>GamePage.xaml</DependentUpon>
     </Compile>
@@ -119,9 +120,6 @@
     <None Include="Arkanoid_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\GameImages\Plat-Green.png" />
-    <Content Include="Assets\GameImages\Plat-Purple.png" />
-    <Content Include="Assets\GameImages\Plat-Red.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -152,6 +150,9 @@
     <SDKReference Include="SQLite.UWP.2015, Version=3.17.0">
       <Name>SQLite for Universal Windows Platform</Name>
     </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\GameImages\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

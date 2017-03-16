@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Arkanoid.Classes;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -24,20 +25,14 @@ namespace Arkanoid
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        public static ScoreController scoreController;
+
         public MainPage()
         {
-            this.InitializeComponent();
-            DisplayInformation.AutoRotationPreferences = DisplayOrientations.Portrait;
-            /*
-            if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
-            {
-                //do something
-                var statusBar = StatusBar.GetForCurrentView();
-                await statusBar.HideAsync();
-            }
             
-            getScreenSize();
-            */
+            this.InitializeComponent();
+            scoreController = new ScoreController();
+            DisplayInformation.AutoRotationPreferences = DisplayOrientations.Portrait;
             this.btnStart.Tapped += BtnStart_Tapped;
         }
 
@@ -46,12 +41,6 @@ namespace Arkanoid
             Frame.Navigate(typeof(GamePage));
         }
 
-        private void getScreenSize()
-        {
-            //Stack overflow http://stackoverflow.com/questions/31936154/get-screen-resolution-in-win10-uwp-app
-            var bounds = ApplicationView.GetForCurrentView().VisibleBounds;
-            var scaleFactor = DisplayInformation.GetForCurrentView().RawPixelsPerViewPixel;
-            tblScreenInfo.Text = (new Size(bounds.Width * scaleFactor, bounds.Height * scaleFactor)).ToString();
-        }
+
     }
 }

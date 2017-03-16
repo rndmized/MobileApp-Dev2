@@ -23,23 +23,32 @@ namespace Arkanoid
     /// </summary>
     public sealed partial class GamePage : Page
     {
-        DispatcherTimer _timer;
-        Accelerometer _myAcc;
-        List<Brick> _bricks;
-        Paddle paddle;
-        Ball ball;
-        Canvas GameCanvas;
+        #region Variables Declaration
+        //
+        private DispatcherTimer _timer;
+        private Accelerometer _myAcc;
+        private List<Brick> _bricks;
+        private Paddle paddle;
+        private Ball ball;
+        private StackPanel powerUpController;
+        public static Canvas GameCanvas;
 
-        bool isStarted = false;
-        bool winningCondition = false;
-        int increment = 10;
+        private bool isStarted = false;
+        private bool winningCondition = false;
+        private int increment = 10;
+        private int speedBuff = 0;
+        private int slowBuff = 0;
+        private TextBlock tbxLives;
+        private TextBlock tbxScore;
 
-
+        #endregion
 
         public GamePage()
         {
             this.InitializeComponent();
+            //Set screen orientation to Landscape mode.
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.Landscape;
+            //Create load and unload event handlers.
             this.Loaded += MainPage_Loaded;
             this.Unloaded += MainPage_Unloaded;
         }
@@ -48,7 +57,9 @@ namespace Arkanoid
 
         private async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
+            //Set up game elements
             this.setupGameField(4, 10);
+            //Set up information grid
             this.setupInfoGrid();
             // check first if there is an accelerometer
             await checkForAccelerometer();
@@ -78,12 +89,12 @@ namespace Arkanoid
 
         private void setupInfoGrid()
         {
-            TextBlock tbxLives = new TextBlock();
+            tbxLives = new TextBlock();
             tbxLives.Text = "Lives goes here.";
             tbxLives.Foreground = new SolidColorBrush(Colors.Green);
 
-            TextBlock tbxScore = new TextBlock();
-            tbxScore.Text = "Score goes here.";
+            tbxScore = new TextBlock();
+            tbxScore.Text = MainPage.scoreController.getScore().ToString();
             tbxScore.Foreground = new SolidColorBrush(Colors.Green);
 
             grdInfo.ColumnDefinitions.Insert(0, new ColumnDefinition());
@@ -133,6 +144,15 @@ namespace Arkanoid
             Canvas.SetLeft(ball.getBall(), ball.getX());
             Canvas.SetTop(ball.getBall(), ball.getY());
             GameCanvas.Children.Add(ball.getBall());
+
+            //Adding Power Up Controller
+            powerUpController = new StackPanel();
+            powerUpController.Name = "PowerUpPanel";
+            powerUpController.Orientation = Orientation.Vertical;
+            powerUpController.HorizontalAlignment = Windows.UI.Xaml.HorizontalAlignment.Center;
+            powerUpController.VerticalAlignment = Windows.UI.Xaml.VerticalAlignment.Bottom;
+            
+            
 
         }
 
@@ -223,7 +243,6 @@ namespace Arkanoid
                 // create the event handlers for readings
                 // changed and the shaken event.
                 _myAcc.ReadingChanged += _myAcc_ReadingChanged;
-                _myAcc.Shaken += _myAcc_Shaken;
 
                 // set the report intervals in milliseconds
                 uint minReportInterval = _myAcc.MinimumReportInterval;
@@ -239,14 +258,6 @@ namespace Arkanoid
             }
         }
 
-        private void _myAcc_Shaken(Accelerometer sender, AccelerometerShakenEventArgs args)
-        {
-            if (isStarted)
-            {
-                ball.setXVector((int)(ball.getXVector()*1.5));
-                ball.setYVector((int)(ball.getYVector() * 1.5));
-            }
-        }
 
         #endregion
 
@@ -356,7 +367,7 @@ namespace Arkanoid
             btnStageOver.BorderThickness = new Thickness(1);
             btnStageOver.Tapped += BtnStageOver_Tapped;
 
-            Canvas.SetLeft(tblstageOver, (GameCanvas.Width / 2) - 100);
+            Canvas.SetLeft(tblstageOver, (GameCanvas.Width / 2) - 90);
             Canvas.SetTop(tblstageOver, GameCanvas.Height / 2);
             Canvas.SetLeft(btnStageOver, (GameCanvas.Width / 2) - 100);
             Canvas.SetTop(btnStageOver, (GameCanvas.Height / 2) - 40);
@@ -368,7 +379,7 @@ namespace Arkanoid
         private void BtnStageOver_Tapped(object sender, TappedRoutedEventArgs e)
         {
             GameCanvas.Children.Clear();
-            this.setupGameField(4,10);
+            this.Frame.Navigate(typeof(GamePage));
         }
         #endregion
 
@@ -379,7 +390,6 @@ namespace Arkanoid
 
             if (isStarted)
             {
-                tblStats.Text = "X vec: "+ball.getXVector().ToString() +"yVec: " + ball.getYVector().ToString();
                 if (_bricks.Count <= 0)
                 {
                     winningCondition = true;
@@ -421,6 +431,7 @@ namespace Arkanoid
                         {
                             brick.Break();
                             this.impactEffect(brick);
+                            this.calculateScore();
                             if (brick.isBrickBroken())
                             {
                                 _bricks.Remove(brick);
@@ -444,13 +455,13 @@ namespace Arkanoid
                     if (paddle.collides(ball.getHitBox()))
                     {
                         ball.setY(paddle.getY() - 11);
-                            ball.setYVector(ball.getYVector() * -1);
+                        ball.setYVector(ball.getYVector() * -1);
                     }
                 }
 
 
-                xPos += ball.getXVector();
-                yPos += ball.getYVector();
+                xPos += ball.getXVector() * ball.getSpeed();
+                yPos += ball.getYVector() * ball.getSpeed();
                 ball.setX((int)xPos);
                 ball.setY((int)yPos);
                 Canvas.SetTop(ball.getBall(), ball.getY());
@@ -573,21 +584,106 @@ namespace Arkanoid
         #endregion
 
         #region Game Mechanics
+
         private void impactEffect(Brick brick)
         {
             if (brick.GetType()== typeof(SpeedBrick)) {
-                ball.setXVector((int)(ball.getXVector() * 1.5));
-                ball.setYVector((int)(ball.getYVector() * 1.5));
+                this.addPowerUp("speed");
             } else if (brick.GetType() == typeof(SlowBrick))
             {
-                if(Math.Abs(ball.getXVector()) > 2){
-                    ball.setXVector((int)(ball.getXVector() * 0.5));
-                    ball.setYVector((int)(ball.getYVector() * 0.5));
-                }
-                
+                this.addPowerUp("slow");
             }
 
         }
+
+        public void addPowerUp(String buff)
+        {
+            Ellipse buffSphere = new Ellipse();
+            buffSphere.Height = 30;
+            buffSphere.Width = 30;
+            buffSphere.Opacity = 0.5;
+            buffSphere.Tapped += BuffSphere_Tapped;
+            buffSphere.Stroke = new SolidColorBrush(Colors.WhiteSmoke);
+
+
+            switch (buff)
+            {
+                case "speed":
+                    speedBuff++;
+                    if (speedBuff == 1)
+                    {
+                        buffSphere.Name = "speedBuff";
+                        buffSphere.Fill = new SolidColorBrush(Colors.CadetBlue);
+                        this.addNewPowerUp(buffSphere, 120);
+                    }
+                    break;
+                case "slow":
+                    slowBuff++;
+                    if (slowBuff == 1)
+                    {
+                        buffSphere.Name = "slowBuff";
+                        buffSphere.Fill = new SolidColorBrush(Colors.DarkSalmon);
+                        this.addNewPowerUp(buffSphere, 60);
+                    }
+                    break;
+                default:
+                    break;
+            }
+           
+
+        }
+
+        private void BuffSphere_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        {
+            Ellipse buff = (Ellipse)sender;
+            
+            if (buff.Name.Equals("speedBuff"))
+            {
+                speedBuff--;
+                if (speedBuff < 1)
+                {
+                    GameCanvas.Children.Remove(buff);
+                }
+                ball.speedUp();
+            }
+            if (buff.Name.Equals("slowBuff"))
+            {
+                slowBuff--;
+                if (slowBuff < 1)
+                {
+                    GameCanvas.Children.Remove(buff);
+                }
+                ball.speedDown();
+            }
+        }
+
+        private void addNewPowerUp(Ellipse powerUp, int height)
+        {
+            
+            Canvas.SetLeft(powerUp, (GameCanvas.ActualWidth - 60));
+            Canvas.SetTop(powerUp, (GameCanvas.ActualHeight - height/1.5));
+            GameCanvas.Children.Add(powerUp);
+        }
+
+        private void calculateScore()
+        {
+            int speed = (int)ball.getSpeed();
+            int scorePoint = speed - 5;
+            if (scorePoint >= 0)
+            {
+                MainPage.scoreController.addScore(100+(50*(scorePoint+1)));
+            }
+            else
+            {
+                MainPage.scoreController.addScore(100 - (10 * (Math.Abs(scorePoint) + 1)));
+            }
+            tbxScore.Text = "Score: " + MainPage.scoreController.getScore().ToString();
+            
+            
+        }
+        
+
+
         #endregion
 
     }
