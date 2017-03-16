@@ -65,11 +65,17 @@ namespace Arkanoid.Classes
         {
             Random rnd = new Random(x*y*width*height);
             Brick randomBrick;
-            int randomNum = rnd.Next(0, 3);
+            int randomNum = rnd.Next(0, 5);
             switch (randomNum)
             {
                 case 0:
                     randomBrick = new SpeedBrick(x, y, width, height);
+                    break;
+                case 1:
+                    randomBrick = new SlowBrick(x, y, width, height);
+                    break;
+                case 2:
+                    randomBrick = new HardBrick(x, y, width, height);
                     break;
                 default:
                     randomBrick = new Brick(x, y, width, height);

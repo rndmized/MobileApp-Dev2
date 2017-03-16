@@ -122,7 +122,7 @@ namespace Arkanoid
             }
 
             //Adding Paddle 1.0
-            paddle = new Paddle((int)(GameCanvas.Width / 2) - 50, (int)(GameCanvas.Height) - 6, 100, 6);
+            paddle = new Paddle((int)(GameCanvas.Width / 2) - 50, (int)(GameCanvas.Height) - 6, 100, 12);
             Canvas.SetLeft(paddle.getPaddle(), paddle.getX());
             Canvas.SetTop(paddle.getPaddle(), paddle.getY());
             GameCanvas.Children.Add(paddle.getPaddle());
@@ -184,6 +184,24 @@ namespace Arkanoid
                 startGame();
 
             }
+            else if (args.VirtualKey == Windows.System.VirtualKey.S)
+            {
+                if (isStarted)
+                {
+                    if (Math.Abs(ball.getXVector()) < 8)
+                    {
+                        ball.setXVector((int)(ball.getXVector() * 1.5));
+                        ball.setYVector((int)(ball.getYVector() * 1.5));
+                    }
+                    else
+                    {
+                        ball.setXVector((int)(ball.getXVector() * 0.5));
+                        ball.setYVector((int)(ball.getYVector() * 0.5));
+                    }
+                    
+                }
+
+            }
         }
 
         private async System.Threading.Tasks.Task checkForAccelerometer()
@@ -205,6 +223,7 @@ namespace Arkanoid
                 // create the event handlers for readings
                 // changed and the shaken event.
                 _myAcc.ReadingChanged += _myAcc_ReadingChanged;
+                _myAcc.Shaken += _myAcc_Shaken;
 
                 // set the report intervals in milliseconds
                 uint minReportInterval = _myAcc.MinimumReportInterval;
@@ -219,9 +238,18 @@ namespace Arkanoid
                 _myAcc.ReportInterval = _desiredReportInterval;
             }
         }
-        
+
+        private void _myAcc_Shaken(Accelerometer sender, AccelerometerShakenEventArgs args)
+        {
+            if (isStarted)
+            {
+                ball.setXVector((int)(ball.getXVector()*1.5));
+                ball.setYVector((int)(ball.getYVector() * 1.5));
+            }
+        }
+
         #endregion
-        
+
         #region Timers Information
         private void setupTimers()
         {
@@ -392,7 +420,7 @@ namespace Arkanoid
                         if (brick.collides(ball.getHitBox()))
                         {
                             brick.Break();
-                            ball = brick.impactEffect(ball);
+                            this.impactEffect(brick);
                             if (brick.isBrickBroken())
                             {
                                 _bricks.Remove(brick);
@@ -547,7 +575,16 @@ namespace Arkanoid
         #region Game Mechanics
         private void impactEffect(Brick brick)
         {
-            if (brick.GetType()== typeof(Brick)) {
+            if (brick.GetType()== typeof(SpeedBrick)) {
+                ball.setXVector((int)(ball.getXVector() * 1.5));
+                ball.setYVector((int)(ball.getYVector() * 1.5));
+            } else if (brick.GetType() == typeof(SlowBrick))
+            {
+                if(Math.Abs(ball.getXVector()) > 2){
+                    ball.setXVector((int)(ball.getXVector() * 0.5));
+                    ball.setYVector((int)(ball.getYVector() * 0.5));
+                }
+                
             }
 
         }

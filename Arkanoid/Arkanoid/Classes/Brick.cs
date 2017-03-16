@@ -68,16 +68,12 @@ namespace Arkanoid.Classes
                     isBroken = true;
                     break;
                 case 1:
+                    brick.Fill = new SolidColorBrush(Colors.GreenYellow);
                     break;
                 case 2:
                     break;
             }
 
-        }
-
-        public Ball impactEffect(Ball ball) {
-            return ball;
-            //DO nothing for regular bricks.
         }
             
     }

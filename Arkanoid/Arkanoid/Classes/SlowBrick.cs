@@ -11,10 +11,10 @@ using Windows.UI.Xaml.Shapes;
 
 namespace Arkanoid.Classes
 {
-    class SpeedBrick : Brick
+    class SlowBrick : Brick
     {
 
-        public SpeedBrick(int x, int y, int width, int height) : base(x, y, width, height)
+        public SlowBrick(int x, int y, int width, int height) : base(x, y, width, height)
         {
             hitBox = new Rect(x, y, width, height);
             setupBrick(width, height);
@@ -25,7 +25,7 @@ namespace Arkanoid.Classes
         {
             brick = new Rectangle();
             brick.Stroke = new SolidColorBrush(Colors.Blue);
-            brick.Fill = new SolidColorBrush(Colors.LightSeaGreen);
+            brick.Fill = new SolidColorBrush(Colors.LightSalmon);
             brick.Height = height;
             brick.Width = width;
             brick.SetValue(Rectangle.NameProperty, this.getX().ToString() + "_" + this.getY().ToString());
