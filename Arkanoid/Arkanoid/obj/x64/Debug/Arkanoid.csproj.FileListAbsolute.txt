@@ -217,3 +217,13 @@ C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Debug\qual
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Debug\ProjectArchitectures.txt
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Debug\Arkanoid.csprojResolveAssemblyReference.cache
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x64\Debug\UserSelectionPage.xbf
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Debug\UserSelectionPage.g.i.cs
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Debug\UserSelectionPage.g.cs
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Debug\UserSelectionPage.xaml
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Debug\UserSelectionPage.xbf
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Debug\DialogControl.g.i.cs
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Debug\DialogControl.g.cs
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Debug\DialogControl.xaml
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Debug\DialogControl.xbf
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x64\Debug\DialogControl.xbf

@@ -8,7 +8,7 @@ namespace Arkanoid.Classes
 {
     public class ScoreController
     {
-        private int score = 0;
+        private volatile int score = 0;
 
         public int getScore()
         {

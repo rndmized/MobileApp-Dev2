@@ -414,3 +414,11 @@ C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x86\Debug\FxRe
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x86\Debug\FxResources.System.Security.Cryptography.Encoding.SR.resw
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x86\Debug\FxResources.System.Security.Cryptography.Primitives.SR.resw
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x86\Debug\FxResources.System.Security.Cryptography.X509Certificates.SR.resw
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x86\Debug\DialogControl.g.i.cs
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x86\Debug\DialogControl.g.cs
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x86\Debug\UserSelectionPage.g.i.cs
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x86\Debug\UserSelectionPage.g.cs
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x86\Debug\DialogControl.xaml
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x86\Debug\UserSelectionPage.xaml
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x86\Debug\DialogControl.xbf
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x86\Debug\UserSelectionPage.xbf

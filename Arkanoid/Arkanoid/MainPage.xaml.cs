@@ -1,4 +1,5 @@
 ﻿using Arkanoid.Classes;
+using Arkanoid.Classes.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -26,19 +27,21 @@ namespace Arkanoid
     public sealed partial class MainPage : Page
     {
         public static ScoreController scoreController;
+        public static SQLiteController sqliteController;
+        public static User user;
 
         public MainPage()
         {
             
             this.InitializeComponent();
             scoreController = new ScoreController();
-            DisplayInformation.AutoRotationPreferences = DisplayOrientations.Portrait;
+            sqliteController = new SQLiteController();
             this.btnStart.Tapped += BtnStart_Tapped;
         }
 
         private void BtnStart_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            Frame.Navigate(typeof(GamePage));
+            Frame.Navigate(typeof(UserSelectionPage));
         }
 
 

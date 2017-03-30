@@ -30,7 +30,6 @@ namespace Arkanoid
         private List<Brick> _bricks;
         private Paddle paddle;
         private Ball ball;
-        private StackPanel powerUpController;
         public static Canvas GameCanvas;
 
         private bool isStarted = false;
@@ -90,11 +89,11 @@ namespace Arkanoid
         private void setupInfoGrid()
         {
             tbxLives = new TextBlock();
-            tbxLives.Text = "Lives goes here.";
+            tbxLives.Text = "User: " + MainPage.user.username;
             tbxLives.Foreground = new SolidColorBrush(Colors.Green);
 
             tbxScore = new TextBlock();
-            tbxScore.Text = MainPage.scoreController.getScore().ToString();
+            tbxScore.Text = "Score: " + MainPage.scoreController.getScore().ToString();
             tbxScore.Foreground = new SolidColorBrush(Colors.Green);
 
             grdInfo.ColumnDefinitions.Insert(0, new ColumnDefinition());
@@ -121,6 +120,7 @@ namespace Arkanoid
             GameCanvas.Width = spCanvas.Width;
             GameCanvas.Background = new SolidColorBrush(Colors.Black);
             spCanvas.Children.Add(GameCanvas);
+            GameCanvas.Tapped += GameCanvas_Tapped;
             
             //Adding bricks 3.0
             _bricks = new List<Brick>();
@@ -133,7 +133,7 @@ namespace Arkanoid
             }
 
             //Adding Paddle 1.0
-            paddle = new Paddle((int)(GameCanvas.Width / 2) - 50, (int)(GameCanvas.Height) - 6, 100, 12);
+            paddle = new Paddle((int)(GameCanvas.Width / 2) - 50, (int)(GameCanvas.Height) - 6, 100, 6);
             Canvas.SetLeft(paddle.getPaddle(), paddle.getX());
             Canvas.SetTop(paddle.getPaddle(), paddle.getY());
             GameCanvas.Children.Add(paddle.getPaddle());
@@ -145,15 +145,11 @@ namespace Arkanoid
             Canvas.SetTop(ball.getBall(), ball.getY());
             GameCanvas.Children.Add(ball.getBall());
 
-            //Adding Power Up Controller
-            powerUpController = new StackPanel();
-            powerUpController.Name = "PowerUpPanel";
-            powerUpController.Orientation = Orientation.Vertical;
-            powerUpController.HorizontalAlignment = Windows.UI.Xaml.HorizontalAlignment.Center;
-            powerUpController.VerticalAlignment = Windows.UI.Xaml.VerticalAlignment.Bottom;
-            
-            
+        }
 
+        private void GameCanvas_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            startGame();
         }
 
         private void GamePage_Tapped(object sender, TappedRoutedEventArgs e)
@@ -304,6 +300,10 @@ namespace Arkanoid
         {
 
             isStarted = false;
+
+            MainPage.sqliteController.saveScore(MainPage.user, MainPage.scoreController.getScore());
+
+
             GameCanvas.Children.Remove(ball.getBall());
             TextBlock tblGameOver = new TextBlock();
             tblGameOver.Text = "GAME OVER";
@@ -353,6 +353,11 @@ namespace Arkanoid
         private void stageOver()
         {
             _timer.Stop();
+
+            MainPage.sqliteController.saveScore(MainPage.user, MainPage.scoreController.getScore());
+            
+
+
             winningCondition = false;
             GameCanvas.Children.Remove(ball.getBall());
             TextBlock tblstageOver = new TextBlock();
@@ -373,6 +378,8 @@ namespace Arkanoid
             Canvas.SetTop(btnStageOver, (GameCanvas.Height / 2) - 40);
             GameCanvas.Children.Add(tblstageOver);
             GameCanvas.Children.Add(btnStageOver);
+
+            MainPage.scoreController.resetScore();
 
         }
 
@@ -599,8 +606,8 @@ namespace Arkanoid
         public void addPowerUp(String buff)
         {
             Ellipse buffSphere = new Ellipse();
-            buffSphere.Height = 30;
-            buffSphere.Width = 30;
+            buffSphere.Height = 40;
+            buffSphere.Width = 40;
             buffSphere.Opacity = 0.5;
             buffSphere.Tapped += BuffSphere_Tapped;
             buffSphere.Stroke = new SolidColorBrush(Colors.WhiteSmoke);
@@ -613,7 +620,7 @@ namespace Arkanoid
                     if (speedBuff == 1)
                     {
                         buffSphere.Name = "speedBuff";
-                        buffSphere.Fill = new SolidColorBrush(Colors.CadetBlue);
+                        buffSphere.Fill = new SolidColorBrush(Colors.Yellow);
                         this.addNewPowerUp(buffSphere, 120);
                     }
                     break;
@@ -622,7 +629,7 @@ namespace Arkanoid
                     if (slowBuff == 1)
                     {
                         buffSphere.Name = "slowBuff";
-                        buffSphere.Fill = new SolidColorBrush(Colors.DarkSalmon);
+                        buffSphere.Fill = new SolidColorBrush(Colors.CornflowerBlue);
                         this.addNewPowerUp(buffSphere, 60);
                     }
                     break;
@@ -661,7 +668,7 @@ namespace Arkanoid
         {
             
             Canvas.SetLeft(powerUp, (GameCanvas.ActualWidth - 60));
-            Canvas.SetTop(powerUp, (GameCanvas.ActualHeight - height/1.5));
+            Canvas.SetTop(powerUp, (GameCanvas.ActualHeight - height/1.25));
             GameCanvas.Children.Add(powerUp);
         }
 
@@ -682,7 +689,6 @@ namespace Arkanoid
             
         }
         
-
 
         #endregion
 

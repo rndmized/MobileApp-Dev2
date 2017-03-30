@@ -12,7 +12,7 @@
     <UseEmulator>true</UseEmulator>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <RemoteDebugMachine>DESKTOP-RD051KV</RemoteDebugMachine>
+    <RemoteDebugMachine>10.12.1.62</RemoteDebugMachine>
     <AuthenticationMode>Universal</AuthenticationMode>
     <RemoteDebugEnabled>true</RemoteDebugEnabled>
   </PropertyGroup>

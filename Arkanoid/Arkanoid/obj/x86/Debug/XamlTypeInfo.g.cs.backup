@@ -132,27 +132,17 @@ namespace Arkanoid.Arkanoid_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[9];
-            _typeNameTable[0] = "Arkanoid.DialogControl";
-            _typeNameTable[1] = "Windows.UI.Xaml.Controls.ContentDialog";
-            _typeNameTable[2] = "Windows.UI.Xaml.Controls.ContentControl";
-            _typeNameTable[3] = "String";
-            _typeNameTable[4] = "Arkanoid.GamePage";
-            _typeNameTable[5] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[6] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[7] = "Arkanoid.MainPage";
-            _typeNameTable[8] = "Arkanoid.UserSelectionPage";
+            _typeNameTable = new string[4];
+            _typeNameTable[0] = "Arkanoid.GamePage";
+            _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[3] = "Arkanoid.MainPage";
 
-            _typeTable = new global::System.Type[9];
-            _typeTable[0] = typeof(global::Arkanoid.DialogControl);
-            _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.ContentDialog);
-            _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.ContentControl);
-            _typeTable[3] = typeof(global::System.String);
-            _typeTable[4] = typeof(global::Arkanoid.GamePage);
-            _typeTable[5] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[6] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[7] = typeof(global::Arkanoid.MainPage);
-            _typeTable[8] = typeof(global::Arkanoid.UserSelectionPage);
+            _typeTable = new global::System.Type[4];
+            _typeTable[0] = typeof(global::Arkanoid.GamePage);
+            _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[3] = typeof(global::Arkanoid.MainPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -187,10 +177,8 @@ namespace Arkanoid.Arkanoid_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_DialogControl() { return new global::Arkanoid.DialogControl(); }
-        private object Activate_4_GamePage() { return new global::Arkanoid.GamePage(); }
-        private object Activate_7_MainPage() { return new global::Arkanoid.MainPage(); }
-        private object Activate_8_UserSelectionPage() { return new global::Arkanoid.UserSelectionPage(); }
+        private object Activate_0_GamePage() { return new global::Arkanoid.GamePage(); }
+        private object Activate_3_MainPage() { return new global::Arkanoid.MainPage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -202,51 +190,24 @@ namespace Arkanoid.Arkanoid_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  Arkanoid.DialogControl
-                userType = new global::Arkanoid.Arkanoid_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.ContentDialog"));
-                userType.Activator = Activate_0_DialogControl;
-                userType.AddMemberName("Text");
+            case 0:   //  Arkanoid.GamePage
+                userType = new global::Arkanoid.Arkanoid_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_0_GamePage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 1:   //  Windows.UI.Xaml.Controls.ContentDialog
+            case 1:   //  Windows.UI.Xaml.Controls.Page
                 xamlType = new global::Arkanoid.Arkanoid_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 2:   //  Windows.UI.Xaml.Controls.ContentControl
+            case 2:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::Arkanoid.Arkanoid_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  String
-                xamlType = new global::Arkanoid.Arkanoid_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 4:   //  Arkanoid.GamePage
+            case 3:   //  Arkanoid.MainPage
                 userType = new global::Arkanoid.Arkanoid_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_4_GamePage;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 5:   //  Windows.UI.Xaml.Controls.Page
-                xamlType = new global::Arkanoid.Arkanoid_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 6:   //  Windows.UI.Xaml.Controls.UserControl
-                xamlType = new global::Arkanoid.Arkanoid_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 7:   //  Arkanoid.MainPage
-                userType = new global::Arkanoid.Arkanoid_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_7_MainPage;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 8:   //  Arkanoid.UserSelectionPage
-                userType = new global::Arkanoid.Arkanoid_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_8_UserSelectionPage;
+                userType.Activator = Activate_3_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -255,32 +216,11 @@ namespace Arkanoid.Arkanoid_XamlTypeInfo
         }
 
 
-        private object get_0_DialogControl_Text(object instance)
-        {
-            var that = (global::Arkanoid.DialogControl)instance;
-            return that.Text;
-        }
-        private void set_0_DialogControl_Text(object instance, object Value)
-        {
-            var that = (global::Arkanoid.DialogControl)instance;
-            that.Text = (global::System.String)Value;
-        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
             global::Arkanoid.Arkanoid_XamlTypeInfo.XamlMember xamlMember = null;
-            global::Arkanoid.Arkanoid_XamlTypeInfo.XamlUserType userType;
-
-            switch (longMemberName)
-            {
-            case "Arkanoid.DialogControl.Text":
-                userType = (global::Arkanoid.Arkanoid_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Arkanoid.DialogControl");
-                xamlMember = new global::Arkanoid.Arkanoid_XamlTypeInfo.XamlMember(this, "Text", "String");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_0_DialogControl_Text;
-                xamlMember.Setter = set_0_DialogControl_Text;
-                break;
-            }
+            // No Local Properties
             return xamlMember;
         }
     }
