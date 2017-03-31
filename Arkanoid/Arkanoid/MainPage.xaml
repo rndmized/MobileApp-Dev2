@@ -8,12 +8,20 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Border x:Name="brdMenu" BorderBrush="Green" BorderThickness="5" Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="19*"/>
+            <RowDefinition Height="13*"/>
+        </Grid.RowDefinitions>
+        <Border x:Name="brdMenu" BorderBrush="Green" BorderThickness="5" Grid.RowSpan="2">
+            <Border.Background>
+                <ImageBrush ImageSource="Assets/GameImages/background1.png"/>
+            </Border.Background>
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
-                <Button x:Name="btnStart" HorizontalAlignment="Center" Foreground="LimeGreen" BorderBrush="Green" BorderThickness="3" Margin="5">Start Game</Button>
-                <Button x:Name="btnScores" HorizontalAlignment="Center" Foreground="LimeGreen" BorderBrush="Green" BorderThickness="3" Margin="5">View Scores</Button>
-                <Button x:Name="btnExit" HorizontalAlignment="Center" Foreground="LimeGreen" BorderBrush="Green" BorderThickness="3" Margin="5">Exit Game</Button>
-                <TextBlock x:Name="tblScreenInfo" Foreground="Green"></TextBlock>
+                <Image Source="Assets\GameImages\logo-text-v2.png" Width="327" Margin="0,0,0,40"/>
+                <Button x:Name="btnStart" HorizontalAlignment="Center" Background="Black" Foreground="LimeGreen" BorderBrush="Green" BorderThickness="3" Margin="5" Content="Start Game"/>
+                <Button x:Name="btnScores" HorizontalAlignment="Center" Background="Black" Foreground="LimeGreen" BorderBrush="Green" BorderThickness="3" Margin="5" Content="View Scores"/>
+                <Button x:Name="btnExit" HorizontalAlignment="Center" Background="Black" Foreground="LimeGreen" BorderBrush="Green" BorderThickness="3" Margin="5" Content="Exit Game"/>
+                <TextBlock x:Name="tblScreenInfo" Foreground="Green"/>
             </StackPanel>
         </Border>
     </Grid>

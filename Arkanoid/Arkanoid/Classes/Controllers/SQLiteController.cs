@@ -34,6 +34,17 @@ namespace Arkanoid.Classes
             return users;
         }
 
+        public List<Score> getScoresByUser(int user_id)
+        {
+            var scores_query = conn.Query<Score>("Select * from score where id = ? ORDER BY score DESC LIMIT 5", user_id);
+            List<Score> scores = new List<Score>();
+            foreach (var score in scores_query)
+            {
+                scores.Add(score);
+            }
+            return scores;
+        }
+
         public void addUser(String username)
         {
             var query = conn.Insert(new User(username, 0));

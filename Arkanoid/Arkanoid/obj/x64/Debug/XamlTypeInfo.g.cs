@@ -132,7 +132,7 @@ namespace Arkanoid.Arkanoid_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[9];
+            _typeNameTable = new string[10];
             _typeNameTable[0] = "Arkanoid.DialogControl";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.ContentDialog";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.ContentControl";
@@ -141,9 +141,10 @@ namespace Arkanoid.Arkanoid_XamlTypeInfo
             _typeNameTable[5] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[6] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[7] = "Arkanoid.MainPage";
-            _typeNameTable[8] = "Arkanoid.UserSelectionPage";
+            _typeNameTable[8] = "Arkanoid.ScorePage";
+            _typeNameTable[9] = "Arkanoid.UserSelectionPage";
 
-            _typeTable = new global::System.Type[9];
+            _typeTable = new global::System.Type[10];
             _typeTable[0] = typeof(global::Arkanoid.DialogControl);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.ContentDialog);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.ContentControl);
@@ -152,7 +153,8 @@ namespace Arkanoid.Arkanoid_XamlTypeInfo
             _typeTable[5] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[6] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[7] = typeof(global::Arkanoid.MainPage);
-            _typeTable[8] = typeof(global::Arkanoid.UserSelectionPage);
+            _typeTable[8] = typeof(global::Arkanoid.ScorePage);
+            _typeTable[9] = typeof(global::Arkanoid.UserSelectionPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -190,7 +192,8 @@ namespace Arkanoid.Arkanoid_XamlTypeInfo
         private object Activate_0_DialogControl() { return new global::Arkanoid.DialogControl(); }
         private object Activate_4_GamePage() { return new global::Arkanoid.GamePage(); }
         private object Activate_7_MainPage() { return new global::Arkanoid.MainPage(); }
-        private object Activate_8_UserSelectionPage() { return new global::Arkanoid.UserSelectionPage(); }
+        private object Activate_8_ScorePage() { return new global::Arkanoid.ScorePage(); }
+        private object Activate_9_UserSelectionPage() { return new global::Arkanoid.UserSelectionPage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -244,9 +247,16 @@ namespace Arkanoid.Arkanoid_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 8:   //  Arkanoid.UserSelectionPage
+            case 8:   //  Arkanoid.ScorePage
                 userType = new global::Arkanoid.Arkanoid_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_8_UserSelectionPage;
+                userType.Activator = Activate_8_ScorePage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 9:   //  Arkanoid.UserSelectionPage
+                userType = new global::Arkanoid.Arkanoid_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_9_UserSelectionPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

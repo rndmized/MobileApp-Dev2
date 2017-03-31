@@ -37,12 +37,25 @@ namespace Arkanoid
             scoreController = new ScoreController();
             sqliteController = new SQLiteController();
             this.btnStart.Tapped += BtnStart_Tapped;
+            this.btnScores.Tapped += BtnScores_Tapped;
+            this.btnExit.Tapped += BtnExit_Tapped;
+        }
+
+        private void BtnExit_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Application.Current.Exit();
+        }
+
+        private void BtnScores_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(ScorePage));
         }
 
         private void BtnStart_Tapped(object sender, TappedRoutedEventArgs e)
         {
             Frame.Navigate(typeof(UserSelectionPage));
         }
+
 
 
     }

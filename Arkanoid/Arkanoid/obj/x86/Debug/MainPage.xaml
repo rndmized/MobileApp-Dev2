@@ -8,12 +8,20 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Border x:ConnectionId='1' x:Name="brdMenu" BorderBrush="Green" BorderThickness="5" Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="19*"/>
+            <RowDefinition Height="13*"/>
+        </Grid.RowDefinitions>
+        <Border x:ConnectionId='1' x:Name="brdMenu" BorderBrush="Green" BorderThickness="5" Grid.RowSpan="2">
+            <Border.Background>
+                <ImageBrush ImageSource="Assets/GameImages/background1.png"/>
+            </Border.Background>
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
-                <Button x:ConnectionId='2' x:Name="btnStart" HorizontalAlignment="Center" Foreground="LimeGreen" BorderBrush="Green" BorderThickness="3" Margin="5">Start Game</Button>
-                <Button x:ConnectionId='3' x:Name="btnScores" HorizontalAlignment="Center" Foreground="LimeGreen" BorderBrush="Green" BorderThickness="3" Margin="5">View Scores</Button>
-                <Button x:ConnectionId='4' x:Name="btnExit" HorizontalAlignment="Center" Foreground="LimeGreen" BorderBrush="Green" BorderThickness="3" Margin="5">Exit Game</Button>
-                <TextBlock x:ConnectionId='5' x:Name="tblScreenInfo" Foreground="Green"></TextBlock>
+                <Image Source="Assets\GameImages\logo-text-v2.png" Width="327" Margin="0,0,0,40"/>
+                <Button x:ConnectionId='2' x:Name="btnStart" HorizontalAlignment="Center" Background="Black" Foreground="LimeGreen" BorderBrush="Green" BorderThickness="3" Margin="5" Content="Start Game"/>
+                <Button x:ConnectionId='3' x:Name="btnScores" HorizontalAlignment="Center" Background="Black" Foreground="LimeGreen" BorderBrush="Green" BorderThickness="3" Margin="5" Content="View Scores"/>
+                <Button x:ConnectionId='4' x:Name="btnExit" HorizontalAlignment="Center" Background="Black" Foreground="LimeGreen" BorderBrush="Green" BorderThickness="3" Margin="5" Content="Exit Game"/>
+                <TextBlock x:ConnectionId='5' x:Name="tblScreenInfo" Foreground="Green"/>
             </StackPanel>
         </Border>
     </Grid>
