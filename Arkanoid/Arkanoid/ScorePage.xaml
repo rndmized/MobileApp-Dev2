@@ -6,24 +6,39 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
+    
+    <!-- Parent Grid -->
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <!-- Parent Border -->
         <Border x:Name="brdPage" BorderBrush="Green" BorderThickness="5">
+            <!-- Setting Bacground to image -->
             <Border.Background>
                 <ImageBrush Stretch="Fill" ImageSource="Assets/GameImages/background_2.jpg"/>
             </Border.Background>
+            <!-- Parent Stack Panel -->
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+                <!-- Inner Stack Panel containing Logo image, scores and Button to return to menu -->
                 <StackPanel>
+                    <!-- Logo image-->
                     <Image Source="Assets\GameImages\scores-logo.png" Margin="0,0,0,15"/>
+                    <!-- Border surronding the scores -->
                     <Border x:Name="brdScores" BorderBrush="Green" BorderThickness="2" Background="Black">
+                        <!-- ScrollViewer to be able to scroll when multiple users with multiple scores -->
                         <ScrollViewer VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto" Height="175" Width="344">
+                            <!-- Stack panel that will contain a grid/table of users and their scores -->
                             <StackPanel x:Name="spScoreBoard" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,30"></StackPanel>
                         </ScrollViewer>
+                        <!--end of ScrollViewer -->
                     </Border>
+                    <!-- end of Border -->
+                    <!-- Return to Menu Button -->
                     <Button x:Name="btnMenu" HorizontalAlignment="Center" Background="Black" Foreground="LimeGreen" BorderBrush="Green" BorderThickness="3" Margin="15" Content="Return to Main Menu"/>
                 </StackPanel>
+                <!-- end of Inner Stack Panel-->
             </StackPanel>
+            <!-- end of Parent Stack Panel -->
         </Border>
-
+        <!-- end of Parent Border -->
     </Grid>
+    <!-- end of Parent Grid -->
 </Page>
