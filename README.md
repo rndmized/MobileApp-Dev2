@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://github.com/rndmized/MobileApp-Dev2/blob/master/Arkanoid/Arkanoid/Assets/GameImages/logo-text-v2.png" />
+</p>
+
 # Block Breaker: Reborn
 
 Classic arkanoid game with sensor features allowing the user to tilt their phone to direct the paddle left or right accordingly. Randomly generated stages and data persistence for scores. Its purpose is to present a challenge by rewarding the user with more points at increased speed, allowing them to improve their scores in a completely random generated environment. It penalizes reducing the speed by earning less point per block broken.
