@@ -414,3 +414,5 @@ C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\il
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\Arkanoid.csprojResolveAssemblyReference.cache
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x64\Release\ilc\Assets\GameImages\background copy.jpg
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\Assets\GameImages\background copy.jpg
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x64\Release\ilc\Assets\GameImages\background_2.jpg
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\Assets\GameImages\background_2.jpg

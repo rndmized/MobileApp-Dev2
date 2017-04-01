@@ -140,6 +140,7 @@
   <ItemGroup>
     <Content Include="Assets\GameImages\background copy.jpg" />
     <Content Include="Assets\GameImages\background1.png" />
+    <Content Include="Assets\GameImages\background_2.jpg" />
     <Content Include="Assets\GameImages\logo-text-v2.png" />
     <Content Include="Assets\GameImages\scores-logo.png" />
     <None Include="Package.StoreAssociation.xml" />

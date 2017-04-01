@@ -373,6 +373,9 @@
     <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\Assets\GameImages\background copy.jpg">
       <PackagePath>Assets\GameImages\background copy.jpg</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\Assets\GameImages\background_2.jpg">
+      <PackagePath>Assets\GameImages\background_2.jpg</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\Assets\GameImages\background1.png">
       <PackagePath>Assets\GameImages\background1.png</PackagePath>
     </AppxPackagedFile>

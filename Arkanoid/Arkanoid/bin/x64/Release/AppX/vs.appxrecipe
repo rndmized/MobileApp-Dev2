@@ -16,7 +16,7 @@
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
-    <RegisteredManifestChecksum>1998640C0EE5303773A096E7C56CC67D43A4FEDD827425F687934D85B590CBB6</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>A765D2557E39860A6D8735E8D289CED47AEBE58DBEC2278C79774B6E008998AD</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>11122RnDMizeD.BlockBreakerReborn_1.1.1.0_x64__t76w7pkmv2eb2</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>11122RnDMizeD.BlockBreakerReborn_t76w7pkmv2eb2!App</RegisteredUserModeAppID>
     <RegisteredPackageID>11122RnDMizeD.BlockBreakerReborn</RegisteredPackageID>
@@ -28,21 +28,21 @@
     <AppXManifest Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x64\Release\ilc\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-01T11:34:53.271</Modified>
+      <Modified>2017-04-01T12:47:42.372</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x64\Release\ilc\Arkanoid.dll">
       <PackagePath>Arkanoid.dll</PackagePath>
-      <Modified>2017-04-01T11:34:53.029</Modified>
+      <Modified>2017-04-01T12:47:42.137</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x64\Release\ilc\Arkanoid.exe">
       <PackagePath>Arkanoid.exe</PackagePath>
-      <Modified>2017-04-01T11:34:53.246</Modified>
+      <Modified>2017-04-01T12:47:42.344</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x64\Release\ilc\Arkanoid.pdb">
       <PackagePath>Arkanoid.pdb</PackagePath>
-      <Modified>2017-04-01T11:34:53.234</Modified>
+      <Modified>2017-04-01T12:47:42.334</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x64\Release\ilc\Assets\GameImages\background copy.jpg">
       <PackagePath>Assets\GameImages\background copy.jpg</PackagePath>
@@ -51,6 +51,10 @@
     <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x64\Release\ilc\Assets\GameImages\background1.png">
       <PackagePath>Assets\GameImages\background1.png</PackagePath>
       <Modified>2017-03-31T19:03:37.917</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x64\Release\ilc\Assets\GameImages\background_2.jpg">
+      <PackagePath>Assets\GameImages\background_2.jpg</PackagePath>
+      <Modified>2017-04-01T12:46:39.006</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x64\Release\ilc\Assets\GameImages\logo-text-v2.png">
       <PackagePath>Assets\GameImages\logo-text-v2.png</PackagePath>
@@ -101,7 +105,7 @@
     <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x64\Release\ilc\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-01T11:30:37.234</Modified>
+      <Modified>2017-04-01T12:47:08.081</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x64\Release\ilc\sqlite3.dll">
       <PackagePath>sqlite3.dll</PackagePath>
