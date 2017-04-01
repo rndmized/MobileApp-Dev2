@@ -8,17 +8,27 @@
     mc:Ignorable="d">
 
     <Grid>
+        <!-- Parent Grid - Setting Background to image -->
         <Grid.Background>
             <ImageBrush Stretch="Fill" ImageSource="Assets/GameImages/background_2.jpg"/>
         </Grid.Background>
+        <!-- Parent Stack Panel -->
         <StackPanel x:Name="spBackground" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Vertical" Background="Black">
+            <!-- This grig will contain information such as User Profile Name and Score -->
             <Grid x:Name="grdInfo"></Grid>
+            <!-- Border around the game screen -->
             <Border BorderBrush="Green" BorderThickness="2">
+                <!-- Viewbox will resize the content to match the parent container -->
                 <Viewbox Stretch="UniformToFill">
+                    <!-- This stack panel will contain the game canvas where game will be rendered -->
                     <StackPanel x:Name="spCanvas" Height="400" Width="800">
                     </StackPanel>
                 </Viewbox>
+                <!-- end of Viewbox -->
             </Border>
+            <!-- end of Border -->
         </StackPanel>
+        <!-- end of Parent StackPanel -->
     </Grid>
+    <!-- en of Parent Grid  -->
 </Page>
