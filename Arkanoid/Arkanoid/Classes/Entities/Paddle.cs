@@ -10,6 +10,11 @@ using Windows.UI.Xaml.Shapes;
 
 namespace Arkanoid.Classes
 {
+    /*
+    *Paddle is an entity subclass that represents a paddle.
+    * It has a Rectangle as a visual representation of the paddle that can be returned to be rendered.
+    * It also has a collision detection function that determines whether it has been collided or not.
+    */
     class Paddle : Entity
     {
         private Rectangle paddle;

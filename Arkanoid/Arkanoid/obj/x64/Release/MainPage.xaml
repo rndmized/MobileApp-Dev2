@@ -7,23 +7,34 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+    <!-- Parent Grid -->
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <!-- Setting Rows and Columns-->
         <Grid.RowDefinitions>
             <RowDefinition Height="19*"/>
             <RowDefinition Height="13*"/>
         </Grid.RowDefinitions>
+        <!-- Border around the window -->
         <Border x:ConnectionId='1' x:Name="brdMenu" BorderBrush="Green" BorderThickness="5" Grid.RowSpan="2">
+            <!-- Setting Background to image -->
             <Border.Background>
                 <ImageBrush ImageSource="Assets/GameImages/background_2.jpg"/>
             </Border.Background>
+            <!-- Parent Stack Panel containing Logo Image, Start Button, View Scores button and Exit Button -->
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+                <!-- Logo Image -->
                 <Image Source="Assets\GameImages\logo-text-v2.png" Width="327" Margin="0,0,0,40"/>
+                <!-- Start Button -->
                 <Button x:ConnectionId='2' x:Name="btnStart" HorizontalAlignment="Center" Background="Black" Foreground="LimeGreen" BorderBrush="Green" BorderThickness="3" Margin="5" Content="Start Game"/>
+                <!-- View Scores Button -->
                 <Button x:ConnectionId='3' x:Name="btnScores" HorizontalAlignment="Center" Background="Black" Foreground="LimeGreen" BorderBrush="Green" BorderThickness="3" Margin="5" Content="View Scores"/>
+                <!-- Exit Application Button -->
                 <Button x:ConnectionId='4' x:Name="btnExit" HorizontalAlignment="Center" Background="Black" Foreground="LimeGreen" BorderBrush="Green" BorderThickness="3" Margin="5" Content="Exit Game"/>
-                <TextBlock x:ConnectionId='5' x:Name="tblScreenInfo" Foreground="Green"/>
             </StackPanel>
+            <!-- end of Parent Stack Panel -->
         </Border>
+        <!-- end of Border -->
     </Grid>
+    <!-- end of Parent Grid -->
 </Page>
 

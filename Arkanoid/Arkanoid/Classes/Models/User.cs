@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace Arkanoid.Classes.Models
 {
+    /* 
+     * User is an entity of a database to store user values.  
+     */
+
     public class User
     {
 

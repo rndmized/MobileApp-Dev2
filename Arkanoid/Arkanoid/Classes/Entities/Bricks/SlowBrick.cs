@@ -13,12 +13,15 @@ namespace Arkanoid.Classes
 {
     class SlowBrick : Brick
     {
-
+        /*
+         * Slowbrick is a subclass of brick with different color.
+         * 
+         */
         public SlowBrick(int x, int y, int width, int height) : base(x, y, width, height)
         {
             hitBox = new Rect(x, y, width, height);
             setupBrick(width, height);
-            thoughness = 1;
+            toughness = 1;
         }
 
         private void setupBrick(int width, int height)

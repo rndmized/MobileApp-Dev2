@@ -1,3 +1,12 @@
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.ComponentModel.Annotations.dll
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.IO.Compression.dll
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Net.Http.dll
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Net.NetworkInformation.dll
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Numerics.Vectors.dll
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Runtime.Serialization.Xml.dll
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.ServiceModel.Http.dll
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.ServiceModel.NetTcp.dll
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.ServiceModel.Primitives.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x64\Release\App.xbf
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x64\Release\DialogControl.xbf
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x64\Release\GamePage.xbf
@@ -16,7 +25,9 @@ C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x64\Release\il
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x64\Release\ilc\Arkanoid.pdb
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x64\Release\ilc\Arkanoid.xr.xml
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x64\Release\ilc\AssemblyInfo.g.cs
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x64\Release\ilc\Assets\GameImages\background copy.jpg
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x64\Release\ilc\Assets\GameImages\background1.png
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x64\Release\ilc\Assets\GameImages\background_2.jpg
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x64\Release\ilc\Assets\GameImages\logo-text-v2.png
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x64\Release\ilc\Assets\GameImages\scores-logo.png
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x64\Release\ilc\Assets\LockScreenLogo.scale-200.png
@@ -246,7 +257,6 @@ C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\il
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Collections.NonGeneric.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Collections.Specialized.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.ComponentModel.dll
-C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.ComponentModel.Annotations.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.ComponentModel.EventBasedAsync.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Data.Common.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Diagnostics.Contracts.dll
@@ -254,7 +264,6 @@ C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\il
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Diagnostics.StackTrace.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Dynamic.Runtime.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Globalization.Extensions.dll
-C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.IO.Compression.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.IO.Compression.ZipFile.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.IO.FileSystem.Primitives.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.IO.IsolatedStorage.dll
@@ -263,15 +272,12 @@ C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\il
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Linq.Expressions.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Linq.Parallel.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Linq.Queryable.dll
-C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Net.Http.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Net.Http.Rtc.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Net.NameResolution.dll
-C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Net.NetworkInformation.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Net.Requests.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Net.WebHeaderCollection.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Net.WebSockets.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Net.WebSockets.Client.dll
-C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Numerics.Vectors.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Numerics.Vectors.WindowsRuntime.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.ObjectModel.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Private.DataContractSerialization.dll
@@ -285,7 +291,6 @@ C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\il
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Runtime.Numerics.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Runtime.Serialization.Json.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Runtime.Serialization.Primitives.dll
-C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Runtime.Serialization.Xml.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Runtime.WindowsRuntime.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Runtime.WindowsRuntime.UI.Xaml.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Security.Claims.dll
@@ -296,9 +301,6 @@ C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\il
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Security.Cryptography.X509Certificates.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Security.Principal.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.ServiceModel.Duplex.dll
-C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.ServiceModel.Http.dll
-C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.ServiceModel.NetTcp.dll
-C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.ServiceModel.Primitives.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.ServiceModel.Security.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Text.Encoding.CodePages.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\System.Text.RegularExpressions.dll
@@ -315,6 +317,8 @@ C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\il
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\resources.pri
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\clrcompression.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\sqlite3.dll
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\Assets\GameImages\background copy.jpg
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\Assets\GameImages\background_2.jpg
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\Assets\GameImages\background1.png
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\Assets\GameImages\logo-text-v2.png
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\Assets\GameImages\scores-logo.png
@@ -411,8 +415,3 @@ C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\il
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\intermediate\sgargs.rsp
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\intermediate\TransformedSRWR\System.Runtime.WindowsRuntime.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\intermediate\TransformedSRWR\System.Runtime.WindowsRuntime.dll.ILTransformTask.repro
-C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\Arkanoid.csprojResolveAssemblyReference.cache
-C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x64\Release\ilc\Assets\GameImages\background copy.jpg
-C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\Assets\GameImages\background copy.jpg
-C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x64\Release\ilc\Assets\GameImages\background_2.jpg
-C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x64\Release\ilc\in\Assets\GameImages\background_2.jpg

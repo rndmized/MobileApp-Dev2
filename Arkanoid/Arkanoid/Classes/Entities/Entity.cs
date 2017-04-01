@@ -7,6 +7,9 @@ using Windows.Foundation;
 
 namespace Arkanoid.Classes
 {
+    /*
+     Entity Class represents an entity whose values are X, Y and Height and Width represented by a rect.
+         */
     class Entity
     {
         protected Rect hitBox;

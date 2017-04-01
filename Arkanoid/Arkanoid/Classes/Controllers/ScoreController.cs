@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace Arkanoid.Classes
 {
+
+
+    /*
+     Score Controller Class Is to add and reset score and to return score value.
+         */
     public class ScoreController
     {
         private volatile int score = 0;

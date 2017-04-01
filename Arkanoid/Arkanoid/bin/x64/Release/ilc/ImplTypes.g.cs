@@ -36050,297 +36050,6 @@ namespace Windows.UI.Xaml.Controls
 		}
 	}
 
-	// Windows.UI.Xaml.Controls.ITextBlock
-	public unsafe static class ITextBlock__Impl
-	{
-		// StubClass for 'Windows.UI.Xaml.Controls.ITextBlock'
-		public static partial class StubClass
-		{
-			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
-			public static void put_FontSize(
-						global::System.__ComObject __this, 
-						double value)
-			{
-				global::McgInterop.ForwardComSharedStubs.Proc_double__<global::Windows.UI.Xaml.Controls.ITextBlock>(
-									__this, 
-									value, 
-									global::Windows.UI.Xaml.Controls.ITextBlock__Impl.Vtbl.idx_put_FontSize
-								);
-				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
-			}
-
-			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
-			public static global::Windows.UI.Xaml.Media.Brush get_Foreground(global::System.__ComObject __this)
-			{
-				global::Windows.UI.Xaml.Media.Brush __ret = global::McgInterop.ForwardComSharedStubs.Func_TResult__<global::Windows.UI.Xaml.Controls.ITextBlock, global::Windows.UI.Xaml.Media.Brush>(
-									__this, 
-									global::Windows.UI.Xaml.Controls.ITextBlock__Impl.Vtbl.idx_get_Foreground
-								);
-				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
-				return __ret;
-			}
-
-			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
-			public static void put_Foreground(
-						global::System.__ComObject __this, 
-						global::Windows.UI.Xaml.Media.Brush value)
-			{
-				global::McgInterop.ForwardComSharedStubs.Proc_TArg0__<global::Windows.UI.Xaml.Controls.ITextBlock, global::Windows.UI.Xaml.Media.Brush>(
-									__this, 
-									value, 
-									global::Windows.UI.Xaml.Controls.ITextBlock__Impl.Vtbl.idx_put_Foreground
-								);
-				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
-			}
-
-			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
-			public static string get_Text(global::System.__ComObject __this)
-			{
-				string __ret = global::McgInterop.ForwardComSharedStubs.Func_string__<global::Windows.UI.Xaml.Controls.ITextBlock>(
-									__this, 
-									global::Windows.UI.Xaml.Controls.ITextBlock__Impl.Vtbl.idx_get_Text
-								);
-				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
-				return __ret;
-			}
-
-			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
-			public static void put_Text(
-						global::System.__ComObject __this, 
-						string value)
-			{
-				global::McgInterop.ForwardComSharedStubs.Proc_string__<global::Windows.UI.Xaml.Controls.ITextBlock>(
-									__this, 
-									value, 
-									global::Windows.UI.Xaml.Controls.ITextBlock__Impl.Vtbl.idx_put_Text
-								);
-				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
-			}
-
-			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
-			public static global::Windows.UI.Xaml.Documents.InlineCollection get_Inlines(global::System.__ComObject __this)
-			{
-				global::Windows.UI.Xaml.Documents.InlineCollection __ret = global::McgInterop.ForwardComSharedStubs.Func_TResult__<global::Windows.UI.Xaml.Controls.ITextBlock, global::Windows.UI.Xaml.Documents.InlineCollection>(
-									__this, 
-									global::Windows.UI.Xaml.Controls.ITextBlock__Impl.Vtbl.idx_get_Inlines
-								);
-				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
-				return __ret;
-			}
-
-			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
-			public static global::System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken add_SelectionChanged(
-						global::System.__ComObject __this, 
-						global::Windows.UI.Xaml.RoutedEventHandler value)
-			{
-				global::System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken __ret = global::McgInterop.ForwardComSharedStubs.Func_UI_Xaml_RoutedEventHandler___WindowsRuntime_EventRegistrationToken__<global::Windows.UI.Xaml.Controls.ITextBlock>(
-									__this, 
-									value, 
-									global::Windows.UI.Xaml.Controls.ITextBlock__Impl.Vtbl.idx_add_SelectionChanged
-								);
-				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
-				return __ret;
-			}
-
-			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
-			public static void remove_SelectionChanged(
-						global::System.__ComObject __this, 
-						global::System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken token)
-			{
-				global::McgInterop.ForwardComSharedStubs.Proc__WindowsRuntime_EventRegistrationToken__<global::Windows.UI.Xaml.Controls.ITextBlock>(
-									__this, 
-									token, 
-									global::Windows.UI.Xaml.Controls.ITextBlock__Impl.Vtbl.idx_remove_SelectionChanged
-								);
-				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
-			}
-
-			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
-			public static global::System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken add_ContextMenuOpening(
-						global::System.__ComObject __this, 
-						global::Windows.UI.Xaml.Controls.ContextMenuOpeningEventHandler value)
-			{
-				global::System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken __ret = global::McgInterop.ForwardComSharedStubs.Func_UI_Xaml_Controls_ContextMenuOpeningEventHandler___WindowsRuntime_EventRegistrationToken__<global::Windows.UI.Xaml.Controls.ITextBlock>(
-									__this, 
-									value, 
-									global::Windows.UI.Xaml.Controls.ITextBlock__Impl.Vtbl.idx_add_ContextMenuOpening
-								);
-				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
-				return __ret;
-			}
-
-			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
-			public static void remove_ContextMenuOpening(
-						global::System.__ComObject __this, 
-						global::System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken token)
-			{
-				global::McgInterop.ForwardComSharedStubs.Proc__WindowsRuntime_EventRegistrationToken__<global::Windows.UI.Xaml.Controls.ITextBlock>(
-									__this, 
-									token, 
-									global::Windows.UI.Xaml.Controls.ITextBlock__Impl.Vtbl.idx_remove_ContextMenuOpening
-								);
-				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
-			}
-		}
-
-		// DispatchClass for 'Windows.UI.Xaml.Controls.ITextBlock'
-		[global::System.Runtime.CompilerServices.DependencyReductionConditionallyDependent(typeof(global::Windows.UI.Xaml.Controls.ITextBlock))]
-		public abstract partial class DispatchClass : global::System.__ComObject, global::Windows.UI.Xaml.Controls.ITextBlock
-		{
-			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
-			[global::System.Runtime.InteropServices.McgAccessor(global::System.Runtime.InteropServices.McgAccessorKind.PropertySet, "Windows.UI.Xaml.Controls.ITextBlock.FontSize")]
-			void global::Windows.UI.Xaml.Controls.ITextBlock.put_FontSize(double value)
-			{
-				global::Windows.UI.Xaml.Controls.ITextBlock__Impl.StubClass.put_FontSize(
-									this, 
-									value
-								);
-				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
-			}
-
-			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
-			[global::System.Runtime.InteropServices.McgAccessor(global::System.Runtime.InteropServices.McgAccessorKind.PropertyGet, "Windows.UI.Xaml.Controls.ITextBlock.Foreground")]
-			global::Windows.UI.Xaml.Media.Brush global::Windows.UI.Xaml.Controls.ITextBlock.get_Foreground()
-			{
-				global::Windows.UI.Xaml.Media.Brush __retVal = global::Windows.UI.Xaml.Controls.ITextBlock__Impl.StubClass.get_Foreground(this);
-				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
-				return __retVal;
-			}
-
-			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
-			[global::System.Runtime.InteropServices.McgAccessor(global::System.Runtime.InteropServices.McgAccessorKind.PropertySet, "Windows.UI.Xaml.Controls.ITextBlock.Foreground")]
-			void global::Windows.UI.Xaml.Controls.ITextBlock.put_Foreground(global::Windows.UI.Xaml.Media.Brush value)
-			{
-				global::Windows.UI.Xaml.Controls.ITextBlock__Impl.StubClass.put_Foreground(
-									this, 
-									value
-								);
-				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
-			}
-
-			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
-			[global::System.Runtime.InteropServices.McgAccessor(global::System.Runtime.InteropServices.McgAccessorKind.PropertyGet, "Windows.UI.Xaml.Controls.ITextBlock.Text")]
-			string global::Windows.UI.Xaml.Controls.ITextBlock.get_Text()
-			{
-				string __retVal = global::Windows.UI.Xaml.Controls.ITextBlock__Impl.StubClass.get_Text(this);
-				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
-				return __retVal;
-			}
-
-			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
-			[global::System.Runtime.InteropServices.McgAccessor(global::System.Runtime.InteropServices.McgAccessorKind.PropertySet, "Windows.UI.Xaml.Controls.ITextBlock.Text")]
-			void global::Windows.UI.Xaml.Controls.ITextBlock.put_Text(string value)
-			{
-				global::Windows.UI.Xaml.Controls.ITextBlock__Impl.StubClass.put_Text(
-									this, 
-									value
-								);
-				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
-			}
-
-			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
-			[global::System.Runtime.InteropServices.McgAccessor(global::System.Runtime.InteropServices.McgAccessorKind.PropertyGet, "Windows.UI.Xaml.Controls.ITextBlock.Inlines")]
-			global::Windows.UI.Xaml.Documents.InlineCollection global::Windows.UI.Xaml.Controls.ITextBlock.get_Inlines()
-			{
-				global::Windows.UI.Xaml.Documents.InlineCollection __retVal = global::Windows.UI.Xaml.Controls.ITextBlock__Impl.StubClass.get_Inlines(this);
-				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
-				return __retVal;
-			}
-
-			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
-			[global::System.Runtime.InteropServices.McgAccessor(global::System.Runtime.InteropServices.McgAccessorKind.EventAdd, "Windows.UI.Xaml.Controls.ITextBlock.SelectionChanged")]
-			global::System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken global::Windows.UI.Xaml.Controls.ITextBlock.add_SelectionChanged(global::Windows.UI.Xaml.RoutedEventHandler value)
-			{
-				global::System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken __retVal = global::Windows.UI.Xaml.Controls.ITextBlock__Impl.StubClass.add_SelectionChanged(
-									this, 
-									value
-								);
-				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
-				return __retVal;
-			}
-
-			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
-			[global::System.Runtime.InteropServices.McgAccessor(global::System.Runtime.InteropServices.McgAccessorKind.EventRemove, "Windows.UI.Xaml.Controls.ITextBlock.SelectionChanged")]
-			void global::Windows.UI.Xaml.Controls.ITextBlock.remove_SelectionChanged(global::System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken token)
-			{
-				global::Windows.UI.Xaml.Controls.ITextBlock__Impl.StubClass.remove_SelectionChanged(
-									this, 
-									token
-								);
-				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
-			}
-
-			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
-			[global::System.Runtime.InteropServices.McgAccessor(global::System.Runtime.InteropServices.McgAccessorKind.EventAdd, "Windows.UI.Xaml.Controls.ITextBlock.ContextMenuOpening")]
-			global::System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken global::Windows.UI.Xaml.Controls.ITextBlock.add_ContextMenuOpening(global::Windows.UI.Xaml.Controls.ContextMenuOpeningEventHandler value)
-			{
-				global::System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken __retVal = global::Windows.UI.Xaml.Controls.ITextBlock__Impl.StubClass.add_ContextMenuOpening(
-									this, 
-									value
-								);
-				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
-				return __retVal;
-			}
-
-			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
-			[global::System.Runtime.InteropServices.McgAccessor(global::System.Runtime.InteropServices.McgAccessorKind.EventRemove, "Windows.UI.Xaml.Controls.ITextBlock.ContextMenuOpening")]
-			void global::Windows.UI.Xaml.Controls.ITextBlock.remove_ContextMenuOpening(global::System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken token)
-			{
-				global::Windows.UI.Xaml.Controls.ITextBlock__Impl.StubClass.remove_ContextMenuOpening(
-									this, 
-									token
-								);
-				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
-			}
-		}
-
-		// v-table for 'Windows.UI.Xaml.Controls.ITextBlock'
-		[global::System.Runtime.CompilerServices.DependencyReductionConditionallyDependent(typeof(global::Windows.UI.Xaml.Controls.ITextBlock))]
-		public unsafe partial struct Vtbl
-		{
-			internal const int idx_put_FontSize = 7;
-			internal const int idx_get_Foreground = 18;
-			internal const int idx_put_Foreground = 19;
-			internal const int idx_get_Text = 26;
-			internal const int idx_put_Text = 27;
-			internal const int idx_get_Inlines = 28;
-			internal const int idx_add_SelectionChanged = 43;
-			internal const int idx_remove_SelectionChanged = 44;
-			internal const int idx_add_ContextMenuOpening = 45;
-			internal const int idx_remove_ContextMenuOpening = 46;
-		}
-	}
-
-	// Windows.UI.Xaml.Controls.ITextBlock2
-	public unsafe static class ITextBlock2__Impl
-	{
-		// v-table for 'Windows.UI.Xaml.Controls.ITextBlock2'
-		[global::System.Runtime.CompilerServices.DependencyReductionConditionallyDependent(typeof(global::Windows.UI.Xaml.Controls.ITextBlock2))]
-		public unsafe partial struct Vtbl
-		{
-		}
-	}
-
-	// Windows.UI.Xaml.Controls.ITextBlock3
-	public unsafe static class ITextBlock3__Impl
-	{
-		// v-table for 'Windows.UI.Xaml.Controls.ITextBlock3'
-		[global::System.Runtime.CompilerServices.DependencyReductionConditionallyDependent(typeof(global::Windows.UI.Xaml.Controls.ITextBlock3))]
-		public unsafe partial struct Vtbl
-		{
-		}
-	}
-
-	// Windows.UI.Xaml.Controls.ITextBlock4
-	public unsafe static class ITextBlock4__Impl
-	{
-		// v-table for 'Windows.UI.Xaml.Controls.ITextBlock4'
-		[global::System.Runtime.CompilerServices.DependencyReductionConditionallyDependent(typeof(global::Windows.UI.Xaml.Controls.ITextBlock4))]
-		public unsafe partial struct Vtbl
-		{
-		}
-	}
-
 	// Windows.UI.Xaml.Controls.IScrollViewer
 	public unsafe static class IScrollViewer__Impl
 	{
@@ -36787,6 +36496,297 @@ namespace Windows.UI.Xaml.Controls
 			internal const int idx_remove_DirectManipulationStarted = 7;
 			internal const int idx_add_DirectManipulationCompleted = 8;
 			internal const int idx_remove_DirectManipulationCompleted = 9;
+		}
+	}
+
+	// Windows.UI.Xaml.Controls.ITextBlock
+	public unsafe static class ITextBlock__Impl
+	{
+		// StubClass for 'Windows.UI.Xaml.Controls.ITextBlock'
+		public static partial class StubClass
+		{
+			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
+			public static void put_FontSize(
+						global::System.__ComObject __this, 
+						double value)
+			{
+				global::McgInterop.ForwardComSharedStubs.Proc_double__<global::Windows.UI.Xaml.Controls.ITextBlock>(
+									__this, 
+									value, 
+									global::Windows.UI.Xaml.Controls.ITextBlock__Impl.Vtbl.idx_put_FontSize
+								);
+				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
+			}
+
+			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
+			public static global::Windows.UI.Xaml.Media.Brush get_Foreground(global::System.__ComObject __this)
+			{
+				global::Windows.UI.Xaml.Media.Brush __ret = global::McgInterop.ForwardComSharedStubs.Func_TResult__<global::Windows.UI.Xaml.Controls.ITextBlock, global::Windows.UI.Xaml.Media.Brush>(
+									__this, 
+									global::Windows.UI.Xaml.Controls.ITextBlock__Impl.Vtbl.idx_get_Foreground
+								);
+				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
+				return __ret;
+			}
+
+			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
+			public static void put_Foreground(
+						global::System.__ComObject __this, 
+						global::Windows.UI.Xaml.Media.Brush value)
+			{
+				global::McgInterop.ForwardComSharedStubs.Proc_TArg0__<global::Windows.UI.Xaml.Controls.ITextBlock, global::Windows.UI.Xaml.Media.Brush>(
+									__this, 
+									value, 
+									global::Windows.UI.Xaml.Controls.ITextBlock__Impl.Vtbl.idx_put_Foreground
+								);
+				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
+			}
+
+			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
+			public static string get_Text(global::System.__ComObject __this)
+			{
+				string __ret = global::McgInterop.ForwardComSharedStubs.Func_string__<global::Windows.UI.Xaml.Controls.ITextBlock>(
+									__this, 
+									global::Windows.UI.Xaml.Controls.ITextBlock__Impl.Vtbl.idx_get_Text
+								);
+				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
+				return __ret;
+			}
+
+			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
+			public static void put_Text(
+						global::System.__ComObject __this, 
+						string value)
+			{
+				global::McgInterop.ForwardComSharedStubs.Proc_string__<global::Windows.UI.Xaml.Controls.ITextBlock>(
+									__this, 
+									value, 
+									global::Windows.UI.Xaml.Controls.ITextBlock__Impl.Vtbl.idx_put_Text
+								);
+				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
+			}
+
+			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
+			public static global::Windows.UI.Xaml.Documents.InlineCollection get_Inlines(global::System.__ComObject __this)
+			{
+				global::Windows.UI.Xaml.Documents.InlineCollection __ret = global::McgInterop.ForwardComSharedStubs.Func_TResult__<global::Windows.UI.Xaml.Controls.ITextBlock, global::Windows.UI.Xaml.Documents.InlineCollection>(
+									__this, 
+									global::Windows.UI.Xaml.Controls.ITextBlock__Impl.Vtbl.idx_get_Inlines
+								);
+				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
+				return __ret;
+			}
+
+			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
+			public static global::System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken add_SelectionChanged(
+						global::System.__ComObject __this, 
+						global::Windows.UI.Xaml.RoutedEventHandler value)
+			{
+				global::System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken __ret = global::McgInterop.ForwardComSharedStubs.Func_UI_Xaml_RoutedEventHandler___WindowsRuntime_EventRegistrationToken__<global::Windows.UI.Xaml.Controls.ITextBlock>(
+									__this, 
+									value, 
+									global::Windows.UI.Xaml.Controls.ITextBlock__Impl.Vtbl.idx_add_SelectionChanged
+								);
+				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
+				return __ret;
+			}
+
+			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
+			public static void remove_SelectionChanged(
+						global::System.__ComObject __this, 
+						global::System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken token)
+			{
+				global::McgInterop.ForwardComSharedStubs.Proc__WindowsRuntime_EventRegistrationToken__<global::Windows.UI.Xaml.Controls.ITextBlock>(
+									__this, 
+									token, 
+									global::Windows.UI.Xaml.Controls.ITextBlock__Impl.Vtbl.idx_remove_SelectionChanged
+								);
+				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
+			}
+
+			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
+			public static global::System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken add_ContextMenuOpening(
+						global::System.__ComObject __this, 
+						global::Windows.UI.Xaml.Controls.ContextMenuOpeningEventHandler value)
+			{
+				global::System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken __ret = global::McgInterop.ForwardComSharedStubs.Func_UI_Xaml_Controls_ContextMenuOpeningEventHandler___WindowsRuntime_EventRegistrationToken__<global::Windows.UI.Xaml.Controls.ITextBlock>(
+									__this, 
+									value, 
+									global::Windows.UI.Xaml.Controls.ITextBlock__Impl.Vtbl.idx_add_ContextMenuOpening
+								);
+				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
+				return __ret;
+			}
+
+			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
+			public static void remove_ContextMenuOpening(
+						global::System.__ComObject __this, 
+						global::System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken token)
+			{
+				global::McgInterop.ForwardComSharedStubs.Proc__WindowsRuntime_EventRegistrationToken__<global::Windows.UI.Xaml.Controls.ITextBlock>(
+									__this, 
+									token, 
+									global::Windows.UI.Xaml.Controls.ITextBlock__Impl.Vtbl.idx_remove_ContextMenuOpening
+								);
+				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
+			}
+		}
+
+		// DispatchClass for 'Windows.UI.Xaml.Controls.ITextBlock'
+		[global::System.Runtime.CompilerServices.DependencyReductionConditionallyDependent(typeof(global::Windows.UI.Xaml.Controls.ITextBlock))]
+		public abstract partial class DispatchClass : global::System.__ComObject, global::Windows.UI.Xaml.Controls.ITextBlock
+		{
+			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
+			[global::System.Runtime.InteropServices.McgAccessor(global::System.Runtime.InteropServices.McgAccessorKind.PropertySet, "Windows.UI.Xaml.Controls.ITextBlock.FontSize")]
+			void global::Windows.UI.Xaml.Controls.ITextBlock.put_FontSize(double value)
+			{
+				global::Windows.UI.Xaml.Controls.ITextBlock__Impl.StubClass.put_FontSize(
+									this, 
+									value
+								);
+				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
+			}
+
+			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
+			[global::System.Runtime.InteropServices.McgAccessor(global::System.Runtime.InteropServices.McgAccessorKind.PropertyGet, "Windows.UI.Xaml.Controls.ITextBlock.Foreground")]
+			global::Windows.UI.Xaml.Media.Brush global::Windows.UI.Xaml.Controls.ITextBlock.get_Foreground()
+			{
+				global::Windows.UI.Xaml.Media.Brush __retVal = global::Windows.UI.Xaml.Controls.ITextBlock__Impl.StubClass.get_Foreground(this);
+				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
+				return __retVal;
+			}
+
+			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
+			[global::System.Runtime.InteropServices.McgAccessor(global::System.Runtime.InteropServices.McgAccessorKind.PropertySet, "Windows.UI.Xaml.Controls.ITextBlock.Foreground")]
+			void global::Windows.UI.Xaml.Controls.ITextBlock.put_Foreground(global::Windows.UI.Xaml.Media.Brush value)
+			{
+				global::Windows.UI.Xaml.Controls.ITextBlock__Impl.StubClass.put_Foreground(
+									this, 
+									value
+								);
+				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
+			}
+
+			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
+			[global::System.Runtime.InteropServices.McgAccessor(global::System.Runtime.InteropServices.McgAccessorKind.PropertyGet, "Windows.UI.Xaml.Controls.ITextBlock.Text")]
+			string global::Windows.UI.Xaml.Controls.ITextBlock.get_Text()
+			{
+				string __retVal = global::Windows.UI.Xaml.Controls.ITextBlock__Impl.StubClass.get_Text(this);
+				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
+				return __retVal;
+			}
+
+			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
+			[global::System.Runtime.InteropServices.McgAccessor(global::System.Runtime.InteropServices.McgAccessorKind.PropertySet, "Windows.UI.Xaml.Controls.ITextBlock.Text")]
+			void global::Windows.UI.Xaml.Controls.ITextBlock.put_Text(string value)
+			{
+				global::Windows.UI.Xaml.Controls.ITextBlock__Impl.StubClass.put_Text(
+									this, 
+									value
+								);
+				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
+			}
+
+			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
+			[global::System.Runtime.InteropServices.McgAccessor(global::System.Runtime.InteropServices.McgAccessorKind.PropertyGet, "Windows.UI.Xaml.Controls.ITextBlock.Inlines")]
+			global::Windows.UI.Xaml.Documents.InlineCollection global::Windows.UI.Xaml.Controls.ITextBlock.get_Inlines()
+			{
+				global::Windows.UI.Xaml.Documents.InlineCollection __retVal = global::Windows.UI.Xaml.Controls.ITextBlock__Impl.StubClass.get_Inlines(this);
+				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
+				return __retVal;
+			}
+
+			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
+			[global::System.Runtime.InteropServices.McgAccessor(global::System.Runtime.InteropServices.McgAccessorKind.EventAdd, "Windows.UI.Xaml.Controls.ITextBlock.SelectionChanged")]
+			global::System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken global::Windows.UI.Xaml.Controls.ITextBlock.add_SelectionChanged(global::Windows.UI.Xaml.RoutedEventHandler value)
+			{
+				global::System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken __retVal = global::Windows.UI.Xaml.Controls.ITextBlock__Impl.StubClass.add_SelectionChanged(
+									this, 
+									value
+								);
+				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
+				return __retVal;
+			}
+
+			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
+			[global::System.Runtime.InteropServices.McgAccessor(global::System.Runtime.InteropServices.McgAccessorKind.EventRemove, "Windows.UI.Xaml.Controls.ITextBlock.SelectionChanged")]
+			void global::Windows.UI.Xaml.Controls.ITextBlock.remove_SelectionChanged(global::System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken token)
+			{
+				global::Windows.UI.Xaml.Controls.ITextBlock__Impl.StubClass.remove_SelectionChanged(
+									this, 
+									token
+								);
+				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
+			}
+
+			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
+			[global::System.Runtime.InteropServices.McgAccessor(global::System.Runtime.InteropServices.McgAccessorKind.EventAdd, "Windows.UI.Xaml.Controls.ITextBlock.ContextMenuOpening")]
+			global::System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken global::Windows.UI.Xaml.Controls.ITextBlock.add_ContextMenuOpening(global::Windows.UI.Xaml.Controls.ContextMenuOpeningEventHandler value)
+			{
+				global::System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken __retVal = global::Windows.UI.Xaml.Controls.ITextBlock__Impl.StubClass.add_ContextMenuOpening(
+									this, 
+									value
+								);
+				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
+				return __retVal;
+			}
+
+			[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
+			[global::System.Runtime.InteropServices.McgAccessor(global::System.Runtime.InteropServices.McgAccessorKind.EventRemove, "Windows.UI.Xaml.Controls.ITextBlock.ContextMenuOpening")]
+			void global::Windows.UI.Xaml.Controls.ITextBlock.remove_ContextMenuOpening(global::System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken token)
+			{
+				global::Windows.UI.Xaml.Controls.ITextBlock__Impl.StubClass.remove_ContextMenuOpening(
+									this, 
+									token
+								);
+				global::System.Runtime.InteropServices.DebugAnnotations.PreviousCallContainsUserCode();
+			}
+		}
+
+		// v-table for 'Windows.UI.Xaml.Controls.ITextBlock'
+		[global::System.Runtime.CompilerServices.DependencyReductionConditionallyDependent(typeof(global::Windows.UI.Xaml.Controls.ITextBlock))]
+		public unsafe partial struct Vtbl
+		{
+			internal const int idx_put_FontSize = 7;
+			internal const int idx_get_Foreground = 18;
+			internal const int idx_put_Foreground = 19;
+			internal const int idx_get_Text = 26;
+			internal const int idx_put_Text = 27;
+			internal const int idx_get_Inlines = 28;
+			internal const int idx_add_SelectionChanged = 43;
+			internal const int idx_remove_SelectionChanged = 44;
+			internal const int idx_add_ContextMenuOpening = 45;
+			internal const int idx_remove_ContextMenuOpening = 46;
+		}
+	}
+
+	// Windows.UI.Xaml.Controls.ITextBlock2
+	public unsafe static class ITextBlock2__Impl
+	{
+		// v-table for 'Windows.UI.Xaml.Controls.ITextBlock2'
+		[global::System.Runtime.CompilerServices.DependencyReductionConditionallyDependent(typeof(global::Windows.UI.Xaml.Controls.ITextBlock2))]
+		public unsafe partial struct Vtbl
+		{
+		}
+	}
+
+	// Windows.UI.Xaml.Controls.ITextBlock3
+	public unsafe static class ITextBlock3__Impl
+	{
+		// v-table for 'Windows.UI.Xaml.Controls.ITextBlock3'
+		[global::System.Runtime.CompilerServices.DependencyReductionConditionallyDependent(typeof(global::Windows.UI.Xaml.Controls.ITextBlock3))]
+		public unsafe partial struct Vtbl
+		{
+		}
+	}
+
+	// Windows.UI.Xaml.Controls.ITextBlock4
+	public unsafe static class ITextBlock4__Impl
+	{
+		// v-table for 'Windows.UI.Xaml.Controls.ITextBlock4'
+		[global::System.Runtime.CompilerServices.DependencyReductionConditionallyDependent(typeof(global::Windows.UI.Xaml.Controls.ITextBlock4))]
+		public unsafe partial struct Vtbl
+		{
 		}
 	}
 

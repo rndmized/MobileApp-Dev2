@@ -11,6 +11,9 @@ using Windows.UI.Xaml.Shapes;
 
 namespace Arkanoid.Classes
 {
+    /*
+   *HardBrick is a subclass of brick with increased toughness and different color.
+   */
     class HardBrick : Brick
     {
 
@@ -18,7 +21,7 @@ namespace Arkanoid.Classes
         {
             hitBox = new Rect(x, y, width, height);
             setupBrick(width, height);
-            thoughness = 2;
+            toughness = 2;
         }
 
         private void setupBrick(int width, int height)

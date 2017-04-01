@@ -8,6 +8,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Arkanoid.Classes.Models
 {
+
+    /* 
+     * 
+     * Score class repressents an entity of a db to store score values.
+     */
     public class Score
     {
         public Score() { }

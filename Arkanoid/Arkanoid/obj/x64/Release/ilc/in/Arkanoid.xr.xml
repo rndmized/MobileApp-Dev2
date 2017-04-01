@@ -79,10 +79,6 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="Content" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
-      <RootProperty Name="Foreground" />
-      <RootProperty Name="Inlines" />
-    </RootType>
     <RootType FullName="Arkanoid.MainPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
       <RootProperty Name="VerticalScrollMode" />
@@ -92,6 +88,10 @@
       <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="Arkanoid.ScorePage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="Inlines" />
+    </RootType>
     <RootType FullName="Arkanoid.UserSelectionPage" />
   </Roots.RootTypes>
 </Roots>

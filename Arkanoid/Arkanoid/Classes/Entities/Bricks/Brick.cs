@@ -11,10 +11,15 @@ using Windows.UI.Xaml.Shapes;
 
 namespace Arkanoid.Classes
 {
+    /*
+     *Brick is an entity subclass that represents a brick. It has toughness representing how many huts can it withstand before braking and a isBroken status.
+     * It also has a Rectangle as a visual representation of the brick that can be returned to be rendered.
+     * It also has a collision detection function that determines whether it has been collided or not.
+     */
     class Brick : Entity
     {
 
-        protected int thoughness;
+        protected int toughness;
         protected bool isBroken = false;
         protected Rectangle brick;
         
@@ -23,7 +28,7 @@ namespace Arkanoid.Classes
         {
             hitBox = new Rect(x, y, width, height);
             setupBrick(width, height);
-            thoughness = 1;
+            toughness = 1;
 
         }
 
@@ -61,8 +66,8 @@ namespace Arkanoid.Classes
 
         public void Break()
         {
-            thoughness--;
-            switch (thoughness)
+            toughness--;
+            switch (toughness)
             {
                 case 0:
                     isBroken = true;

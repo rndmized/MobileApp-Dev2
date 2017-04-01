@@ -187,6 +187,7 @@ namespace Arkanoid
 
         private void CoreWindow_KeyDown(CoreWindow sender, KeyEventArgs args)
         {
+            //detect the key pressed 
             if (args.VirtualKey == Windows.System.VirtualKey.Left)
             {
                 updatePaddlePosition("left");
@@ -198,24 +199,6 @@ namespace Arkanoid
             else if (args.VirtualKey == Windows.System.VirtualKey.Space)
             {
                 startGame();
-
-            }
-            else if (args.VirtualKey == Windows.System.VirtualKey.S)
-            {
-                if (isStarted)
-                {
-                    if (Math.Abs(ball.getXVector()) < 8)
-                    {
-                        ball.setXVector((int)(ball.getXVector() * 1.5));
-                        ball.setYVector((int)(ball.getYVector() * 1.5));
-                    }
-                    else
-                    {
-                        ball.setXVector((int)(ball.getXVector() * 0.5));
-                        ball.setYVector((int)(ball.getYVector() * 0.5));
-                    }
-                    
-                }
 
             }
         }
@@ -260,6 +243,7 @@ namespace Arkanoid
         #region Timers Information
         private void setupTimers()
         {
+            //If no timer create new timer.
             if (_timer == null)
             {
                 _timer = new DispatcherTimer();
@@ -270,13 +254,11 @@ namespace Arkanoid
 
         private void _timer_Tick(object sender, object e)
         {
-            // move the block in a while, catch the key down event
-            // create a key listener event
-            //updateEllipsePosition();
+            // check if the game is running, if so update ball updateBallPosition
             if (isStarted)
             {
                 updateBallPosition();
-            }
+            }//if the game is not started and the winningCondition is true advane to new stage.
             else if (!isStarted && winningCondition)
             {
                 stageOver();

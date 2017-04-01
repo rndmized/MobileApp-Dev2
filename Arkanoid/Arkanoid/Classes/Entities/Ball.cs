@@ -10,6 +10,12 @@ using Windows.UI.Xaml.Shapes;
 
 namespace Arkanoid.Classes
 {
+    /*
+   * Ball is an entity subclass that represents a ball.
+   * It has an Ellipse as a visual representation of the ball that can be returned to be rendered, a speed that determines how many pixels does it moves per tick and xyvectors to determine direction.
+   * Speed can be modified by increasing it by one or decreasing it by one.
+   * It also has a collision detection function that determines whether it has been collided or not.
+   */
     class Ball : Entity
     {
         private Ellipse ball;
