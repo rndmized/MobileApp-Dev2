@@ -370,6 +370,12 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UAP\v0.8.0.0\ExtensionSDKs\SQLite.UWP.2015\3.17.0\Redist\Retail\ARM\sqlite3.dll">
       <PackagePath>sqlite3.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\Assets\GameImages\background copy.jpg">
+      <PackagePath>Assets\GameImages\background copy.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\Assets\GameImages\background_2.jpg">
+      <PackagePath>Assets\GameImages\background_2.jpg</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\Assets\GameImages\background1.png">
       <PackagePath>Assets\GameImages\background1.png</PackagePath>
     </AppxPackagedFile>

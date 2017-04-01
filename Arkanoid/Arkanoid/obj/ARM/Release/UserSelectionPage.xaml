@@ -7,26 +7,55 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+    <!-- Parent Grid -->
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <!-- Border around screen -->
         <Border BorderThickness="5" BorderBrush="LimeGreen">
+            <!-- Setting background to image -->
+            <Border.Background>
+                <ImageBrush Stretch="Fill" ImageSource="Assets/GameImages/background_2.jpg"/>
+            </Border.Background>
+            <!-- Parent Stack Panel -->
             <StackPanel x:ConnectionId='1' Orientation="Vertical" x:Name="spMainPanel" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <!-- Border around Users -->
                 <Border BorderThickness="2" BorderBrush="LimeGreen" Margin="10">
-                    <StackPanel x:ConnectionId='7' Orientation="Vertical" x:Name="spUserListPanel">
-                    </StackPanel>
+                    <!-- ScrollViewer to scroll thorugh multiple user profiles -->
+                    <ScrollViewer VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto" Height="130" Width="Auto">
+                        <!-- Stack Panel will containg list of user profiles -->
+                        <StackPanel x:ConnectionId='7' Orientation="Vertical" x:Name="spUserListPanel">
+                        </StackPanel>
+                        <!-- end of User Profiles List Stack Panel-->
+                    </ScrollViewer>
+                    <!-- enf of ScrollViewer -->
                 </Border>
+                <!-- end of Border -->
+                <!-- Border around buttons Panel-->
                 <Border BorderThickness="2" BorderBrush="LimeGreen" Margin="10">
+                    <!-- Stack Panel containing Add Profile Button and Start game Button  -->
                     <StackPanel x:ConnectionId='4' Orientation="Horizontal" x:Name="spButtonsPanel" Margin="10">
+                        <!-- Add Profile Button -->
                         <Button x:ConnectionId='5' x:Name="btnAddUser" Content="Add new Profile" Margin="10"></Button>
+                        <!-- Start Game -->
                         <Button x:ConnectionId='6' x:Name="btnStartGame" Content="Start Game" Margin="10"></Button>
                     </StackPanel>
+                    <!-- end of Stack Panel -->
                 </Border>
+                <!-- end of Buttons Menu Border -->
+                <!-- Border for current profile selected -->
                 <Border BorderThickness="2" BorderBrush="LimeGreen" Margin="10">
+                    <!-- Stack panel containing current profile selected-->
                     <StackPanel x:ConnectionId='2' x:Name="spCurrentUser">
+                        <!-- Textblock to indicate current profile selected -->
                         <TextBlock x:ConnectionId='3' x:Name="tblcurrentUser" Foreground="LimeGreen">Current Profile:</TextBlock>
                     </StackPanel>
+                    <!-- end of Stack Panel-->
                 </Border>
+                <!-- end of Border -->
             </StackPanel>
+            <!-- end of Parent Stack Panel  -->
         </Border>
+        <!-- end of Parent Border-->
     </Grid>
+    <!-- en dof Parent Grid -->
 </Page>
 

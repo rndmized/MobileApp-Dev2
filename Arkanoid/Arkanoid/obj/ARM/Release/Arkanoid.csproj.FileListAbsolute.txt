@@ -16,7 +16,9 @@ C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\ARM\Release\il
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\ARM\Release\ilc\Arkanoid.pdb
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\ARM\Release\ilc\Arkanoid.xr.xml
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\ARM\Release\ilc\AssemblyInfo.g.cs
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\ARM\Release\ilc\Assets\GameImages\background copy.jpg
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\ARM\Release\ilc\Assets\GameImages\background1.png
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\ARM\Release\ilc\Assets\GameImages\background_2.jpg
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\ARM\Release\ilc\Assets\GameImages\logo-text-v2.png
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\ARM\Release\ilc\Assets\GameImages\scores-logo.png
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\ARM\Release\ilc\Assets\LockScreenLogo.scale-200.png
@@ -315,6 +317,8 @@ C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\ARM\Release\il
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\ARM\Release\ilc\in\resources.pri
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\ARM\Release\ilc\in\clrcompression.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\ARM\Release\ilc\in\sqlite3.dll
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\ARM\Release\ilc\in\Assets\GameImages\background copy.jpg
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\ARM\Release\ilc\in\Assets\GameImages\background_2.jpg
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\ARM\Release\ilc\in\Assets\GameImages\background1.png
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\ARM\Release\ilc\in\Assets\GameImages\logo-text-v2.png
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\ARM\Release\ilc\in\Assets\GameImages\scores-logo.png
@@ -411,3 +415,4 @@ C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\ARM\Release\il
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\ARM\Release\ilc\intermediate\sgargs.rsp
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\ARM\Release\ilc\intermediate\TransformedSRWR\System.Runtime.WindowsRuntime.dll
 C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\ARM\Release\ilc\intermediate\TransformedSRWR\System.Runtime.WindowsRuntime.dll.ILTransformTask.repro
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\ARM\Release\Arkanoid.csprojResolveAssemblyReference.cache

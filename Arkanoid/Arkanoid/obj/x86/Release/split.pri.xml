@@ -77,9 +77,19 @@
 					</Candidate>
 				</NamedResource>
 				<ResourceMapSubtree name="GameImages">
+					<NamedResource name="background copy.jpg" uri="ms-resource://11122RnDMizeD.BlockBreakerReborn/Files/Assets/GameImages/background copy.jpg">
+						<Candidate type="Path">
+							<Value>Assets\GameImages\background copy.jpg</Value>
+						</Candidate>
+					</NamedResource>
 					<NamedResource name="background1.png" uri="ms-resource://11122RnDMizeD.BlockBreakerReborn/Files/Assets/GameImages/background1.png">
 						<Candidate type="Path">
 							<Value>Assets\GameImages\background1.png</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="background_2.jpg" uri="ms-resource://11122RnDMizeD.BlockBreakerReborn/Files/Assets/GameImages/background_2.jpg">
+						<Candidate type="Path">
+							<Value>Assets\GameImages\background_2.jpg</Value>
 						</Candidate>
 					</NamedResource>
 					<NamedResource name="logo-text-v2.png" uri="ms-resource://11122RnDMizeD.BlockBreakerReborn/Files/Assets/GameImages/logo-text-v2.png">

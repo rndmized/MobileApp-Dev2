@@ -18,4 +18,6 @@
 "C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x86\Release\PackageLayout\Assets\LockScreenLogo.scale-200.png"			"Assets\LockScreenLogo.scale-200.png"
 "C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x86\Release\PackageLayout\Assets\GameImages\scores-logo.png"			"Assets\GameImages\scores-logo.png"
 "C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x86\Release\PackageLayout\Assets\GameImages\logo-text-v2.png"			"Assets\GameImages\logo-text-v2.png"
+"C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x86\Release\PackageLayout\Assets\GameImages\background_2.jpg"			"Assets\GameImages\background_2.jpg"
 "C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x86\Release\PackageLayout\Assets\GameImages\background1.png"			"Assets\GameImages\background1.png"
+"C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\obj\x86\Release\PackageLayout\Assets\GameImages\background copy.jpg"			"Assets\GameImages\background copy.jpg"
