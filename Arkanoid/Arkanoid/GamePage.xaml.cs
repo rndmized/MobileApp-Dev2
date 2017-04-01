@@ -231,7 +231,7 @@ namespace Arkanoid
                 // constructor
                 Window.Current.CoreWindow.KeyDown += CoreWindow_KeyDown;
 
-                msgDialog.Content = "no accelerometer available!";
+                msgDialog.Content = "No accelerometer available! Use arrow keys instead. Click inside the sreen window to start.";
                 await msgDialog.ShowAsync();
             }
             else
@@ -287,7 +287,7 @@ namespace Arkanoid
 
         private void startGame()
         {
-            if (ball.getX() > GameCanvas.Width/2)
+            if ((ball.getX() > GameCanvas.Width/2) && (!isStarted))
             {
                 ball.setXVector(ball.getXVector() * -1);
             }
@@ -339,7 +339,7 @@ namespace Arkanoid
         private void btnRetry_Tapped(object sender, TappedRoutedEventArgs e)
         {
             //Clear Score
-            GameCanvas.Children.Clear();
+            MainPage.scoreController.resetScore();
             this.Frame.Navigate(typeof(GamePage));
         }
 
@@ -353,11 +353,6 @@ namespace Arkanoid
         private void stageOver()
         {
             _timer.Stop();
-
-            MainPage.sqliteController.saveScore(MainPage.user, MainPage.scoreController.getScore());
-            
-
-
             winningCondition = false;
             GameCanvas.Children.Remove(ball.getBall());
             TextBlock tblstageOver = new TextBlock();
@@ -378,14 +373,10 @@ namespace Arkanoid
             Canvas.SetTop(btnStageOver, (GameCanvas.Height / 2) - 40);
             GameCanvas.Children.Add(tblstageOver);
             GameCanvas.Children.Add(btnStageOver);
-
-            MainPage.scoreController.resetScore();
-
         }
 
         private void BtnStageOver_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            GameCanvas.Children.Clear();
             this.Frame.Navigate(typeof(GamePage));
         }
         #endregion

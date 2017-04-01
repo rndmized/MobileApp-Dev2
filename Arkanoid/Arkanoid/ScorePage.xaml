@@ -8,12 +8,15 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Border x:Name="brdPage" BorderBrush="Green" BorderThickness="5" Background="Black">
+        <Border x:Name="brdPage" BorderBrush="Green" BorderThickness="5">
+            <Border.Background>
+                <ImageBrush Stretch="Fill" ImageSource="Assets/GameImages/background_2.jpg"/>
+            </Border.Background>
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
                 <StackPanel>
                     <Image Source="Assets\GameImages\scores-logo.png" Margin="0,0,0,15"/>
                     <Border x:Name="brdScores" BorderBrush="Green" BorderThickness="2" Background="Black">
-                        <ScrollViewer VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto" Height="175" Width="400">
+                        <ScrollViewer VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto" Height="175" Width="344">
                             <StackPanel x:Name="spScoreBoard" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,30"></StackPanel>
                         </ScrollViewer>
                     </Border>

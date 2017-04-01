@@ -9,10 +9,15 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Border BorderThickness="5" BorderBrush="LimeGreen">
+            <Border.Background>
+                <ImageBrush Stretch="Fill" ImageSource="Assets/GameImages/background_2.jpg"/>
+            </Border.Background>
             <StackPanel Orientation="Vertical" x:Name="spMainPanel" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Border BorderThickness="2" BorderBrush="LimeGreen" Margin="10">
-                    <StackPanel Orientation="Vertical" x:Name="spUserListPanel">
-                    </StackPanel>
+                    <ScrollViewer VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto" Height="130" Width="Auto">
+                        <StackPanel Orientation="Vertical" x:Name="spUserListPanel">
+                        </StackPanel>
+                    </ScrollViewer>
                 </Border>
                 <Border BorderThickness="2" BorderBrush="LimeGreen" Margin="10">
                     <StackPanel Orientation="Horizontal" x:Name="spButtonsPanel" Margin="10">

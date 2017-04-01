@@ -1,0 +1,2 @@
+MainPackage=C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\bin\x86\Release\Upload\Arkanoid_1.1.0.0_x86.appx
+SymbolPackage=C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\AppPackages\Arkanoid_1.1.0.0\Arkanoid_1.1.0.0_x86.appxsym

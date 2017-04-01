@@ -1,0 +1,1 @@
+C:\Users\thefa\Documents\Git\MobileApp-Dev2\Arkanoid\Arkanoid\Arkanoid.csproj;arm

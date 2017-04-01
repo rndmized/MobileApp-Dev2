@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
         <Border x:Name="brdMenu" BorderBrush="Green" BorderThickness="5" Grid.RowSpan="2">
             <Border.Background>
-                <ImageBrush ImageSource="Assets/GameImages/background1.png"/>
+                <ImageBrush ImageSource="Assets/GameImages/background_2.jpg"/>
             </Border.Background>
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
                 <Image Source="Assets\GameImages\logo-text-v2.png" Width="327" Margin="0,0,0,40"/>

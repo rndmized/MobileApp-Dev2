@@ -7,7 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="Assets/GameImages/background_2.jpg"/>
+        </Grid.Background>
         <StackPanel x:Name="spBackground" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Vertical" Background="Black">
             <Grid x:Name="grdInfo"></Grid>
             <Border BorderBrush="Green" BorderThickness="2">
