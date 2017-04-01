@@ -73,7 +73,7 @@ namespace Arkanoid
             if (_myAcc != null)
             {
                 _myAcc.ReadingChanged -= _myAcc_ReadingChanged;
-                
+
             }
             if (_timer != null)
             {
@@ -85,9 +85,12 @@ namespace Arkanoid
 
         #region setup Environment
 
-
+        /*
+         * This function sets up view elements such as user profile and score.
+         */
         private void setupInfoGrid()
         {
+
             tbxLives = new TextBlock();
             tbxLives.Text = "User: " + MainPage.user.username;
             tbxLives.Foreground = new SolidColorBrush(Colors.Green);
@@ -111,17 +114,20 @@ namespace Arkanoid
             grdInfo.Children.Add(tbxScore);
         }
 
+        /*
+         * Instantiate GameCanvas and add game elements into it: ball, paddle and bricks.
+         * */
         private void setupGameField(int rows, int columns)
         {
             //Canvas size width 600 height 350
-    
+            //Settting up canvas
             GameCanvas = new Canvas();
             GameCanvas.Height = spCanvas.Height;
             GameCanvas.Width = spCanvas.Width;
             GameCanvas.Background = new SolidColorBrush(Colors.Black);
             spCanvas.Children.Add(GameCanvas);
             GameCanvas.Tapped += GameCanvas_Tapped;
-            
+
             //Adding bricks 3.0
             _bricks = new List<Brick>();
             LevelBuilder lb = new LevelBuilder();
@@ -140,19 +146,13 @@ namespace Arkanoid
 
             //Adding Ball 1.0
             ball = new Ball(paddle.getX() + (paddle.getWidth() / 2), paddle.getY() - 11, 10, 10);
-            ball.getBall().Tapped += GamePage_Tapped;
             Canvas.SetLeft(ball.getBall(), ball.getX());
             Canvas.SetTop(ball.getBall(), ball.getY());
             GameCanvas.Children.Add(ball.getBall());
 
         }
-
+        //On canvas tapped start game
         private void GameCanvas_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            startGame();
-        }
-
-        private void GamePage_Tapped(object sender, TappedRoutedEventArgs e)
         {
             startGame();
         }
@@ -269,10 +269,12 @@ namespace Arkanoid
 
         private void startGame()
         {
-            if ((ball.getX() > GameCanvas.Width/2) && (!isStarted))
+            //Decide whether the ball goes right or left at the start
+            if ((ball.getX() > GameCanvas.Width / 2) && (!isStarted))
             {
                 ball.setXVector(ball.getXVector() * -1);
             }
+            //set started to true and start timer
             isStarted = true;
             _timer.Start();
         }
@@ -280,13 +282,14 @@ namespace Arkanoid
         #region Game over
         private void gameOver()
         {
-
+            //stop game
             isStarted = false;
-
+            //Save score 
             MainPage.sqliteController.saveScore(MainPage.user, MainPage.scoreController.getScore());
 
-
+            //Display Game over and add buttons to view.
             GameCanvas.Children.Remove(ball.getBall());
+            //Game Over text
             TextBlock tblGameOver = new TextBlock();
             tblGameOver.Text = "GAME OVER";
             tblGameOver.FontSize = 35;
@@ -312,7 +315,7 @@ namespace Arkanoid
             btnRetry.Foreground = new SolidColorBrush(Colors.Green);
             btnRetry.BorderBrush = new SolidColorBrush(Colors.Green);
             btnRetry.BorderThickness = new Thickness(2);
-            Canvas.SetLeft(btnRetry, (GameCanvas.Width / 2)+25);
+            Canvas.SetLeft(btnRetry, (GameCanvas.Width / 2) + 25);
             Canvas.SetTop(btnRetry, (GameCanvas.Height / 2) + 60);
             GameCanvas.Children.Add(btnRetry);
 
@@ -322,11 +325,13 @@ namespace Arkanoid
         {
             //Clear Score
             MainPage.scoreController.resetScore();
+            //reload page
             this.Frame.Navigate(typeof(GamePage));
         }
 
         private void BtnMenu_Tapped(object sender, TappedRoutedEventArgs e)
         {
+            //Navigate to main page
             this.Frame.Navigate(typeof(MainPage));
         }
         #endregion
@@ -334,6 +339,7 @@ namespace Arkanoid
         #region StageOver
         private void stageOver()
         {
+            //Stop game, display Text and show button to go to next stage.
             _timer.Stop();
             winningCondition = false;
             GameCanvas.Children.Remove(ball.getBall());
@@ -359,17 +365,19 @@ namespace Arkanoid
 
         private void BtnStageOver_Tapped(object sender, TappedRoutedEventArgs e)
         {
+            //Reload page
             this.Frame.Navigate(typeof(GamePage));
         }
         #endregion
 
         #region GUI Updates
-
+        //Checks ball position and updates it depending on whether collides or not
         private void updateBallPosition()
         {
-
+            //Check if game is started
             if (isStarted)
             {
+                //Check winning condition
                 if (_bricks.Count <= 0)
                 {
                     winningCondition = true;
@@ -378,89 +386,98 @@ namespace Arkanoid
                 }
                 else
                 {
+                    //Get ball's position values
+                    float xPos = ball.getX();
+                    float yPos = ball.getY();
 
-                
-                float xPos = ball.getX();
-                float yPos = ball.getY();
-
-                if (xPos > GameCanvas.Width - ball.getWidth())
-                {
-                    Canvas.SetLeft(ball.getBall(), GameCanvas.ActualWidth - ball.getWidth());
-                        ball.setXVector(ball.getXVector()*-1);
-                }
-                if (xPos < 0)
-                {
-                    Canvas.SetLeft(ball.getBall(), 0);
-                        ball.setXVector(ball.getXVector() * -1);
-                }
-                if (yPos > GameCanvas.Height - ball.getHeight())
-                {
-                    gameOver();
-                }
-                if (yPos < 0)
-                {
-                    Canvas.SetTop(ball.getBall(), 0);
-                        ball.setYVector(ball.getYVector() * -1);
-                }
-                if (ball.getY() < 150)
-                {
-                    foreach (Brick brick in _bricks)
+                    //Check collision against borders
+                    if (xPos > GameCanvas.Width - ball.getWidth())
                     {
-
-                        if (brick.collides(ball.getHitBox()))
+                        Canvas.SetLeft(ball.getBall(), GameCanvas.ActualWidth - ball.getWidth());
+                        ball.setXVector(ball.getXVector() * -1);
+                    }
+                    if (xPos < 0)
+                    {
+                        Canvas.SetLeft(ball.getBall(), 0);
+                        ball.setXVector(ball.getXVector() * -1);
+                    }
+                    if (yPos < 0)
+                    {
+                        Canvas.SetTop(ball.getBall(), 0);
+                        ball.setYVector(ball.getYVector() * -1);
+                    }
+                    //Check bottom border
+                    if (yPos > GameCanvas.Height - ball.getHeight())
+                    {
+                        gameOver();
+                    }
+                    //If ball is close enough to top border
+                    if (ball.getY() < 150)
+                    {
+                        //Check collision againt every brick
+                        foreach (Brick brick in _bricks)
                         {
-                            brick.Break();
-                            this.impactEffect(brick);
-                            this.calculateScore();
-                            if (brick.isBrickBroken())
+                            //If collision occurs
+                            if (brick.collides(ball.getHitBox()))
                             {
-                                _bricks.Remove(brick);
-                                GameCanvas.Children.Remove(brick.getBrick());
-                            }
-                            if (ball.getX() >= brick.getX() && ball.getX() <= brick.getX() + brick.getWidth() || (ball.getX() * ball.getHeight()) >= brick.getX() && (ball.getX() * ball.getHeight()) <= brick.getX() + brick.getWidth())
-                            {
+                                //Break brick
+                                brick.Break();
+                                //Determine effect
+                                this.impactEffect(brick);
+                                //Add Score
+                                this.calculateScore();
+                                //Remove if fully broken
+                                if (brick.isBrickBroken())
+                                {
+                                    _bricks.Remove(brick);
+                                    GameCanvas.Children.Remove(brick.getBrick());
+                                }
+                                //Determine ball direction depending of it hitting the side (left/right o top/bottom) 
+                                if (ball.getX() >= brick.getX() && ball.getX() <= brick.getX() + brick.getWidth() || (ball.getX() * ball.getHeight()) >= brick.getX() && (ball.getX() * ball.getHeight()) <= brick.getX() + brick.getWidth())
+                                {
                                     ball.setYVector(ball.getYVector() * -1);
-                            }
-                            else if (ball.getY() >= brick.getY() && ball.getY() <= brick.getY() + brick.getHeight() || (ball.getY() * ball.getHeight()) >= brick.getY() && (ball.getY() * ball.getHeight()) <= brick.getY() + brick.getWidth())
-                            {
+                                }
+                                else if (ball.getY() >= brick.getY() && ball.getY() <= brick.getY() + brick.getHeight() || (ball.getY() * ball.getHeight()) >= brick.getY() && (ball.getY() * ball.getHeight()) <= brick.getY() + brick.getWidth())
+                                {
                                     ball.setXVector(ball.getXVector() * -1);
+                                }
+                                break;
                             }
-                            break;
                         }
                     }
-                }
-
-                if (ball.getY() > 200)
-                {
-                    if (paddle.collides(ball.getHitBox()))
+                    //If ball is near the bottom enough calculate collision against paddle
+                    if (ball.getY() > 200)
                     {
-                        ball.setY(paddle.getY() - 11);
-                        ball.setYVector(ball.getYVector() * -1);
+                        if (paddle.collides(ball.getHitBox()))
+                        {
+                            ball.setY(paddle.getY() - 11);
+                            ball.setYVector(ball.getYVector() * -1);
+                        }
                     }
-                }
 
-
-                xPos += ball.getXVector() * ball.getSpeed();
-                yPos += ball.getYVector() * ball.getSpeed();
-                ball.setX((int)xPos);
-                ball.setY((int)yPos);
-                Canvas.SetTop(ball.getBall(), ball.getY());
-                Canvas.SetLeft(ball.getBall(), ball.getX());
+                    //Set Ball new psoition
+                    xPos += ball.getXVector() * ball.getSpeed();
+                    yPos += ball.getYVector() * ball.getSpeed();
+                    ball.setX((int)xPos);
+                    ball.setY((int)yPos);
+                    Canvas.SetTop(ball.getBall(), ball.getY());
+                    Canvas.SetLeft(ball.getBall(), ball.getX());
                 }
             }
         }
 
         private void updateUI(AccelerometerReading reading)
-        { 
+        {
+            //Updates paddle postion from acceleromter reading
             updatePaddlePosition(reading);
         }
 
         private void updatePaddlePosition(AccelerometerReading reading)
         {
 
-            // use the AccelerationX: if >0 move right
-            //                        if <0 move left
-
+            // use the AccelerationY: if < -0.04 move right
+            //                        if >0.04 move left
+            //Check if is started if not, the ball will move along the paddle
             if (isStarted)
             {
                 if (reading.AccelerationY > 0.04)
@@ -509,10 +526,11 @@ namespace Arkanoid
                 }
             }
 
-    }
-
+        }
+        //Updates paddle position using strings
         private void updatePaddlePosition(string direction)
         {
+            //Check if is started if not, the ball will move along the paddle
             if (isStarted)
             {
                 if (direction == "left")
@@ -534,14 +552,15 @@ namespace Arkanoid
                     }
                 }
 
-            } else
+            }
+            else
             {
                 if (direction == "left")
                 {
                     if (!((double)paddle.getPaddle().GetValue(Canvas.LeftProperty) <= 0))
                     {
                         // move left
-                        ball.setX(ball.getX()-increment);
+                        ball.setX(ball.getX() - increment);
                         Canvas.SetLeft(ball.getBall(), ball.getX());
                         paddle.setX(paddle.getX() - increment);
                         Canvas.SetLeft(paddle.getPaddle(), paddle.getX());
@@ -558,7 +577,7 @@ namespace Arkanoid
                         Canvas.SetLeft(paddle.getPaddle(), paddle.getX());
                     }
                 }
-            }     
+            }
         }
 
         #endregion
@@ -567,24 +586,28 @@ namespace Arkanoid
 
         private void impactEffect(Brick brick)
         {
-            if (brick.GetType()== typeof(SpeedBrick)) {
+            //Check brink type and add buff based on it
+            if (brick.GetType() == typeof(SpeedBrick))
+            {
                 this.addPowerUp("speed");
-            } else if (brick.GetType() == typeof(SlowBrick))
+            }
+            else if (brick.GetType() == typeof(SlowBrick))
             {
                 this.addPowerUp("slow");
             }
 
         }
-
+        //Takes a string and adds a buff based on it
         public void addPowerUp(String buff)
         {
+            //Visual representation of the buff
             Ellipse buffSphere = new Ellipse();
             buffSphere.Height = 40;
             buffSphere.Width = 40;
             buffSphere.Opacity = 0.5;
             buffSphere.Tapped += BuffSphere_Tapped;
             buffSphere.Stroke = new SolidColorBrush(Colors.WhiteSmoke);
-
+ 
 
             switch (buff)
             {
@@ -609,14 +632,15 @@ namespace Arkanoid
                 default:
                     break;
             }
-           
+
 
         }
 
+        //When buff tapped
         private void BuffSphere_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
         {
             Ellipse buff = (Ellipse)sender;
-            
+            //Check buff if speed increase ball's speed and reduce buff amount
             if (buff.Name.Equals("speedBuff"))
             {
                 speedBuff--;
@@ -626,6 +650,7 @@ namespace Arkanoid
                 }
                 ball.speedUp();
             }
+            //if slow reduce ball's speed and reduce buff amount
             if (buff.Name.Equals("slowBuff"))
             {
                 slowBuff--;
@@ -636,32 +661,32 @@ namespace Arkanoid
                 ball.speedDown();
             }
         }
-
+        //Add buff to canvas
         private void addNewPowerUp(Ellipse powerUp, int height)
         {
-            
+
             Canvas.SetLeft(powerUp, (GameCanvas.ActualWidth - 60));
-            Canvas.SetTop(powerUp, (GameCanvas.ActualHeight - height/1.25));
+            Canvas.SetTop(powerUp, (GameCanvas.ActualHeight - height / 1.25));
             GameCanvas.Children.Add(powerUp);
         }
-
+        //Calculates score based on ball's speed and display it in view.
         private void calculateScore()
         {
             int speed = (int)ball.getSpeed();
             int scorePoint = speed - 5;
             if (scorePoint >= 0)
             {
-                MainPage.scoreController.addScore(100+(50*(scorePoint+1)));
+                MainPage.scoreController.addScore(100 + (50 * (scorePoint + 1)));
             }
             else
             {
                 MainPage.scoreController.addScore(100 - (10 * (Math.Abs(scorePoint) + 1)));
             }
             tbxScore.Text = "Score: " + MainPage.scoreController.getScore().ToString();
-            
-            
+
+
         }
-        
+
 
         #endregion
 

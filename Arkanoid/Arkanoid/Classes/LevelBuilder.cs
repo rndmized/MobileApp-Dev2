@@ -9,8 +9,7 @@ namespace Arkanoid.Classes
 {
     class LevelBuilder
     {
-
-
+        //Generates a list of bricks based omn the desired number of rows and columns and the canvas size
         public List<Brick> getNewLevelLayout(int rows, int columns, Canvas GameCanvas)
         {
             List<Brick> levelLayout = new List<Brick>();
@@ -33,7 +32,7 @@ namespace Arkanoid.Classes
             return levelLayout;
         }
 
-
+        //Generates a list of bricks based omn the desired number of rows and columns and the canvas size, but bricks types are randomly created and after the list is crated  it "pokes" holes in it
         public List<Brick> getNewRandomLevelLayout(int rows, int columns, Canvas GameCanvas)
         {
             List<Brick> levelLayout = new List<Brick>();
@@ -60,7 +59,7 @@ namespace Arkanoid.Classes
             }
             return levelLayout;
         }
-
+        //Returns a random type of brick with x,t,width and height
         private Brick getRandomBrick(int x, int y, int width, int height)
         {
             Random rnd = new Random(x*y*width*height);
